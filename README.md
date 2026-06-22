@@ -1,33 +1,26 @@
-# 🌐 Loom Framing — Landing Oficial
+# 🌐 Loom Framing — Sitio Oficial
 
-Cara pública del producto **Loom Framing** — la app del framero, pa' frameros.
-Servida en **[loomframing.com](https://loomframing.com)** vía GitHub Pages.
+Landing oficial de **Loom Framing** — la app del framero, pa' frameros.
 
-## Qué es esto
+🔗 **En vivo:** [loomframing.com](https://loomframing.com)
 
-Repo dedicado **solo** a la landing de marketing (español, mobile-first, voz canon).
-Separado a propósito de:
+## Qué es
 
-- 🔒 `Loom-Framing-App` (privado) — la app Flutter + todo el dev.
-- 🌍 `jezblade.github.io` (público) — portafolio / cara del Ultimate Plan.
-
-Un producto con dominio propio merece su propia casa: historial, deploy y dominio
-aislados. Sigue el patrón polyrepo del Ultimate Plan (cada concern, su repo).
-
-## Estructura
+Sitio público de marketing de Loom Framing: español, mobile-first, hecho pa' los
+frameros profesionales. Servido por GitHub Pages con dominio propio.
 
 ```
 index.html        # la landing
-assets/           # imágenes (feature graphic, screenshots, founder, icon)
+assets/           # imágenes (feature graphic, screenshots, app icon)
 blog/             # blog del framero
-CNAME             # loomframing.com (GitHub Pages custom domain)
+CNAME             # loomframing.com
 ```
 
 ## Deploy
 
-GitHub Pages sirve la rama `main` (raíz). El dominio `loomframing.com` apunta acá
-vía DNS en Cloudflare. Editar la landing = commit + push → deploy automático.
+GitHub Pages sirve la rama `main` (raíz). Editar = commit + push → deploy automático.
+DNS gestionado en Cloudflare apuntando a GitHub Pages.
 
----
+## Licencia
 
-_Brotherhood Seal: 015cb320 · Part of Ultimate Plan_
+MIT — ver [LICENSE](./LICENSE).

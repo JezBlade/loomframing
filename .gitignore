@@ -1,0 +1,56 @@
+# Environment files
+.env
+.env.*
+process.env
+process.env.*
+*.bak
+
+# Build artifacts
+dist/
+*.tsbuildinfo
+
+# PDF files
+*.pdf
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Backups
+Backups/
+
+# Local logs
+*.jsonl
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# No .env backups — secrets are managed externally, never committed
+*.env.bak
+*.env.backup
+.env.bak*
+process.env.bak
+
+# ===== Internal-only artifacts — never commit to this PUBLIC repo =====
+# This is the public web presence for Loom Framing App ONLY.
+# Internal development artifacts must stay in the separate private repository.
+MISSION.md
+SILENT_BLADE*
+silent_blade*
+activation-fase*.txt
+activation-phase*.txt
+.brotherhood-*
+.copilot-config.json
+.copilot-context-*.md
+.copilot-specialized-*.md
+.copilot-instructions*.md
+**/copilot-instructions.md
+*-CANON_*.md
+CANON_*.md
+internal/
+private/
+docs/internal/
+docs/council/
+docs/artifacts/
