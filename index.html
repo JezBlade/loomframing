@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <title>Loom Framing — calculadora de framing en español</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Loom Framing — la calculadora de framing en español, hecha por un framer. Códigos IRC 2021, lista de materiales a PDF y checklist de inspección, todo offline en tu Android.">
+<meta name="description" content="Loom Framing — la calculadora de framing en español, hecha por un framer. Códigos IRC 2018, lista de materiales a PDF y checklist de inspección, todo offline en tu Android.">
 
 <!-- Open Graph / social share preview (FB · WhatsApp · Reddit · LinkedIn) -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://loomframing.com/">
 <meta property="og:title" content="Loom Framing — el compañero que sabe más, en la obra">
-<meta property="og:description" content="14 calculadoras de campo, BOM a PDF y códigos IRC 2021. 100% offline, bilingüe ES/EN. Hecha por un framer, pa' frameros.">
+<meta property="og:description" content="15 calculadoras de campo, BOM a PDF y códigos IRC 2018. 100% offline, bilingüe ES/EN. Hecha por un framer, pa' frameros.">
 <meta property="og:image" content="https://loomframing.com/assets/feature-graphic-v474-1024x500.png">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="500">
 <meta property="og:locale" content="es_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Loom Framing — el compañero que sabe más, en la obra">
-<meta name="twitter:description" content="14 calculadoras de campo, BOM a PDF y códigos IRC 2021. 100% offline, bilingüe ES/EN.">
+<meta name="twitter:description" content="15 calculadoras de campo, BOM a PDF y códigos IRC 2018. 100% offline, bilingüe ES/EN.">
 <meta name="twitter:image" content="https://loomframing.com/assets/feature-graphic-v474-1024x500.png">
 
 <!-- Perf: preconnect a CDNs externos (React + Google Fonts) pa' bajar el render en mobile 3G -->
@@ -29,7 +29,7 @@
 {
   "@context":"https://schema.org","@type":"SoftwareApplication","name":"Loom Framing",
   "applicationCategory":"BusinessApplication","operatingSystem":"Android","inLanguage":"es",
-  "description":"Calculadora de framing en espanol: codigos IRC 2021, BOM a PDF, checklist de inspeccion. Hecha por un framer, para frameros.",
+  "description":"Calculadora de framing en espanol: codigos IRC 2018, BOM a PDF, checklist de inspeccion. Hecha por un framer, para frameros.",
   "author":{"@type":"Organization","name":"Loom Framing"}
 }
 </script>
@@ -50,7 +50,7 @@
 <style>
 /* ===========================================================
    LOOM FRAMING — Design Tokens
-   IRC 2021 · Idaho · ES/EN bilingüe · Offline-first
+   IRC 2018 · Idaho · ES/EN bilingüe · Offline-first
 
    Loom is a tradesman tool brand, not a tech corp.
    The palette is warm gold + café oscuro + cream canvas.
@@ -165,7 +165,7 @@
   --lh-loose:    1.65;
 
   --ls-display: -0.01em;
-  --ls-label:    0.14em;   /* "WALL FRAMING · IRC 2021" eyebrow */
+  --ls-label:    0.14em;   /* "WALL FRAMING · IRC 2018" eyebrow */
 
   /* ============ SPACING — 4px base ============ */
   --s-0: 0;
@@ -266,7 +266,7 @@ p { font-size: var(--t-body); line-height: var(--lh-body); }
 p.small { font-size: var(--t-small); color: var(--fg-mute); }
 
 /* ---------- EYEBROW / LABEL ---------- */
-/* Used over screen titles: "WALL FRAMING · IRC 2021" */
+/* Used over screen titles: "WALL FRAMING · IRC 2018" */
 .eyebrow {
   font-family: var(--font-body);
   font-size: var(--t-label);
@@ -609,7 +609,7 @@ function Hero() {
       background: 'rgba(184,148,31,0.08)',
       marginBottom: 26
     }
-  }, "\u2605 v4.7 EN VIVO \xB7 closed testing en Google Play"), /*#__PURE__*/React.createElement("h1", {
+  }, "\u2605 v4.8.0 EN VIVO \xB7 closed testing en Google Play"), /*#__PURE__*/React.createElement("h1", {
     style: {
       margin: 0,
       fontFamily: 'var(--font-display)',
@@ -684,7 +684,7 @@ function Hero() {
 
 // ─────────── BadgeRow ───────────
 function BadgeRow() {
-  const ITEMS = [['📡', 'Funciona sin internet'], ['🌐', 'Bilingüe ES / EN'], ['✓', 'IRC 2021'], ['🎯', 'Quiz del Framero']];
+  const ITEMS = [['📡', 'Funciona sin internet'], ['🌐', 'Bilingüe ES / EN'], ['✓', 'IRC 2018'], ['🎯', 'Quiz del Framero']];
   return /*#__PURE__*/React.createElement("div", {
     style: {
       background: 'var(--canvas)',
@@ -727,7 +727,7 @@ function BadgeRow() {
 
 // ─────────── StatsBand ───────────
 function StatsBand() {
-  const STATS = [['14', 'Calculadoras de campo'], ['106', 'Artículos y tips pro'], ['29', 'Items de inspección'], ['20+', 'Tablas IRC 2021']];
+  const STATS = [['15', 'Calculadoras de campo'], ['106', 'Artículos y tips pro'], ['29', 'Items de inspección'], ['20+', 'Tablas IRC 2018']];
   return /*#__PURE__*/React.createElement("section", {
     className: "lm-stats",
     style: {
@@ -789,7 +789,7 @@ function V4Patch() {
       textTransform: 'uppercase',
       color: 'var(--gold-700)'
     }
-  }, "\u2605 v4.7.3 EN VIVO \xB7 closed testing"), /*#__PURE__*/React.createElement("h2", {
+  }, "\u2605 v4.8.0 EN VIVO \xB7 closed testing"), /*#__PURE__*/React.createElement("h2", {
     style: {
       margin: '8px 0 22px',
       fontFamily: 'var(--font-display)',
@@ -800,14 +800,14 @@ function V4Patch() {
       color: 'var(--cafe-900)',
       letterSpacing: '-0.01em'
     }
-  }, "Lo nuevo en v4.7"), /*#__PURE__*/React.createElement("div", {
+  }, "Lo nuevo en v4.8"), /*#__PURE__*/React.createElement("div", {
     className: "lm-grid-4",
     style: {
       display: 'grid',
       gridTemplateColumns: 'repeat(4, 1fr)',
       gap: 14
     }
-  }, [['P', 'Plus System', 'Suma como tu cinta: 15\u20198\xBE\u201D + 5\u20191\xBD\u201D = 20\u201910\xBC\u201D'], ['R', 'CTA Resolver', 'Dashboard naranja que te lleva directo al c\xE1lculo'], ['I', 'Pre-Inspecci\xF3n', 'Cada fallo abre su detalle al tap \u2014 con c\xF3digo IRC al lado'], ['G', 'Glosario ampliado', '188 t\xE9rminos biling\xFCes del oficio, con jerga real']].map(([k, t, sub]) => /*#__PURE__*/React.createElement("div", {
+  }, [['P', 'Plus System', 'Suma como tu cinta: 15\u20198\xBE\u201D + 5\u20191\xBD\u201D = 20\u201910\xBC\u201D'], ['T', 'Tu proyecto manda', 'Las calcs jalan snow, cargas y placa de TU plano — con recibo de dónde salió'], ['I', 'Pre-Inspecci\xF3n', 'Cada fallo abre su detalle al tap \u2014 con c\xF3digo IRC al lado'], ['G', 'Glosario ampliado', '193 t\xE9rminos biling\xFCes del oficio, con jerga real']].map(([k, t, sub]) => /*#__PURE__*/React.createElement("div", {
     key: k,
     style: {
       background: 'var(--cream)',
@@ -856,7 +856,7 @@ function V4Patch() {
 
 // ─────────── FeaturesGrid ───────────
 function FeaturesGrid() {
-  const FEATS = [['📐', 'Calculadoras de Campo', 'Headers, studs, birdsmouth, rake wall, OC layout. Resultado en menos de 3 segundos. Sin internet.'], ['🛠', 'Gable End & Vaulted Wall', '5 outputs instantáneos: ridge height, stud heights, plate angles y backing.'], ['📋', 'Lista de Materiales', 'Genera tu BOM completo, exporta a PDF, manda al supplier directo desde la obra.'], ['🔍', 'Checklist de Inspección', '29 items en 7 categorías. Pasa la inspección a la primera. Captura fotos de evidencia.'], ['📖', 'Códigos IRC 2021', 'Nailing schedule, header tables, Simpson hardware, snow loads por condado.'], ['📚', 'Manual del Framer', '52 artículos técnicos + 54 tips pro + glosario de 188 términos. Bilingüe. Todo offline. Hecho en Idaho.']];
+  const FEATS = [['📐', 'Calculadoras de Campo', 'Headers, studs, birdsmouth, rake wall, OC layout. Resultado en menos de 3 segundos. Sin internet.'], ['🛠', 'Gable End & Vaulted Wall', '5 outputs instantáneos: ridge height, stud heights, plate angles y backing.'], ['📋', 'Lista de Materiales', 'Genera tu BOM completo, exporta a PDF, manda al supplier directo desde la obra.'], ['🔍', 'Checklist de Inspección', '29 items en 7 categorías. Pasa la inspección a la primera. Captura fotos de evidencia.'], ['📖', 'Códigos IRC 2018', 'Nailing schedule, header tables, Simpson hardware, snow loads por condado.'], ['📚', 'Manual del Framer', '52 artículos técnicos + 54 tips pro + glosario de 193 términos. Bilingüe. Todo offline. Hecho en Idaho.']];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '64px 28px',
@@ -1039,7 +1039,7 @@ function PersonaCards() {
 // ─────────── FAQ ───────────
 function FAQ() {
   const [open, setOpen] = useS_land(0);
-  const QS = [['¿Funciona sin internet?', 'Sí. Todas las funciones principales funcionan 100% offline: las 14 calculadoras, los 52 artículos y 54 tips pro, el glosario de 188 términos, BOM, códigos IRC, checklists, quiz.'], ['¿De verdad está en español?', 'Sí. La interfaz y las explicaciones están en español. Los términos técnicos (shear wall, LVL, Simpson H1, etc.) se quedan en inglés — porque así es como se habla en la obra.'], ['¿Sirve en todo Estados Unidos?', 'S\xED. Loom naci\xF3 en Treasure Valley, Idaho, pero el IRC 2021 es c\xF3digo nacional. Trae snow loads, zona s\xEDsmica y referencias que aplican donde sea que claves en US.'], ['¿Puedo exportar a PDF?', 'Sí. Genera una lista de materiales completa y expórtala a PDF con un solo tap. Comparte por email o texto directo al supplier.'], ['¿C\xF3mo entro al closed testing?', 'Ahora mismo Loom est\xE1 en closed testing en Google Play. M\xE9tete al crew por WhatsApp y te pasamos la invitaci\xF3n. Sin trucos, sin cupo \u2014 entre m\xE1s frameros, mejor.']];
+  const QS = [['¿Funciona sin internet?', 'Sí. Todas las funciones principales funcionan 100% offline: las 15 calculadoras, los 52 artículos y 54 tips pro, el glosario de 193 términos, BOM, códigos IRC, checklists, quiz.'], ['¿De verdad está en español?', 'Sí. La interfaz y las explicaciones están en español. Los términos técnicos (shear wall, LVL, Simpson H1, etc.) se quedan en inglés — porque así es como se habla en la obra.'], ['¿Sirve en todo Estados Unidos?', 'S\xED. Loom naci\xF3 en Treasure Valley, Idaho, pero el IRC 2018 es c\xF3digo nacional. Trae snow loads, zona s\xEDsmica y referencias que aplican donde sea que claves en US.'], ['¿Puedo exportar a PDF?', 'Sí. Genera una lista de materiales completa y expórtala a PDF con un solo tap. Comparte por email o texto directo al supplier.'], ['¿C\xF3mo entro al closed testing?', 'Ahora mismo Loom est\xE1 en closed testing en Google Play. M\xE9tete al crew por WhatsApp y te pasamos la invitaci\xF3n. Sin trucos, sin cupo \u2014 entre m\xE1s frameros, mejor.']];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       padding: '64px 28px',
@@ -1218,7 +1218,7 @@ Object.assign(window, {
 // feature canon (spacer funcional ~140px que protege las teclas de la zona muerta del
 // navbar del sistema + branding del slogan) — se deja A PROPÓSITO: comunica craft real.
 function ProofShots() {
-  const SHOTS = [['shot-plan-intelligence', 'Plan Intelligence', 'Abre el PDF del plano y Loom saca los trusses — 21 de un jalón, por página.'], ['shot-keypad', 'Teclado de obra', 'Naranja pa\u0027 pies, azul pa\u0027 pulgadas, chips de fracción. Pensado pa\u0027 dedos con guantes.'], ['shot-fallos', 'Lo que el inspector SÍ ve', 'Cada fallo con su código IRC al lado: R602.3, R302.11, R602.10.6.'], ['shot-glosario', '188 términos del oficio', 'Bilingüe EN\u2194ES, por categoría. Del header al birdsmouth.']];
+  const SHOTS = [['shot-plan-intelligence', 'Visor de Planos', 'Abre el PDF de tu plano y te lo organiza por hojas. La lectura estructural completa viene en camino — sin humo, te avisamos cuando jale.'], ['shot-keypad', 'Teclado de obra', 'Naranja pa\u0027 pies, azul pa\u0027 pulgadas, chips de fracción. Pensado pa\u0027 dedos con guantes.'], ['shot-fallos', 'Lo que el inspector SÍ ve', 'Cada fallo con su código IRC al lado: R602.3, R302.11, R602.10.6.'], ['shot-glosario', '193 términos del oficio', 'Bilingüe EN\u2194ES, por categoría. Del header al birdsmouth.']];
   return /*#__PURE__*/React.createElement("section", {
     style: {
       background: 'var(--cafe-900)',
@@ -1316,7 +1316,7 @@ function ProofShots() {
       lineHeight: 1.6,
       color: 'rgba(250,249,247,0.4)'
     }
-  }, "Capturas reales del build v4.7.3 (S938U). \xDAnico lugar donde el palette in-product aparece en marketing \u2014 como producto, no como chrome.")));
+  }, "Capturas reales del build v4.8.0 (S938U). \xDAnico lugar donde el palette in-product aparece en marketing \u2014 como producto, no como chrome.")));
 }
 
 // ─────────── Stakes — SB7 failure stakes + success outcome ───────────
@@ -1472,7 +1472,7 @@ function Stakes() {
 // Tabla HONESTA. Loom no se compara con humo. Los precios exactos de competidores
 // quedan FLAGGED — no se publican sin verificar (canon: nada inventado).
 function Compare() {
-  const ROWS = [['En español, voz de obra', true, false, false, false], ['Teclado pa\u0027 guantes (feet/in)', true, false, false, false], ['Códigos IRC 2021 inline', true, false, false, false], ['Lista de materiales → PDF', true, false, false, false], ['Checklist de inspección', true, false, false, false], ['Funciona 100% offline', true, true, true, true]];
+  const ROWS = [['En español, voz de obra', true, false, false, false], ['Teclado pa\u0027 guantes (feet/in)', true, false, false, false], ['Códigos IRC 2018 inline', true, false, false, false], ['Lista de materiales → PDF', true, false, false, false], ['Checklist de inspección', true, false, false, false], ['Funciona 100% offline', true, true, true, true]];
   const COLS = ['Loom', 'Calc. de pago*', 'Papel & lápiz', 'De memoria'];
   const cell = v => v ? /*#__PURE__*/React.createElement("span", {
     style: {
@@ -1594,7 +1594,7 @@ function Compare() {
       lineHeight: 1.6,
       color: 'var(--cafe-500)'
     }
-  }, "* Calculadoras de framing de pago (tipo Construction Master Pro): grandes en c\xE1lculo, pero en ingl\xE9s, sin IRC inline, sin BOM ni inspecci\xF3n. Nombre y precio exactos de competidores quedan pendientes de verificar antes de publicar.")));
+  }, "* Calculadoras de framing de pago (tipo Construction Master Pro): grandes en c\xE1lculo, pero en ingl\xE9s, sin IRC inline, sin BOM ni inspecci\xF3n.")));
 }
 
 // ─────────── FounderSeal — Authority + Liking (Cialdini) ───────────
@@ -2021,7 +2021,7 @@ function MejorasEnCamino() {
       lineHeight: 1.55,
       maxWidth: 580
     }
-  }, "Navegamos la app completa con frameros y cazamos lo que estorbaba. Aqu\xED est\xE1, sin maquillaje \u2014 todo resuelto en la v4.7 que ya tienes."), /*#__PURE__*/React.createElement("div", {
+  }, "Navegamos la app completa con frameros y cazamos lo que estorbaba. Aqu\xED est\xE1, sin maquillaje \u2014 todo resuelto en la v4.8 que ya tienes."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       flexDirection: 'column',
