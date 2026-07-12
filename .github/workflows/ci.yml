@@ -1,3 +1,6 @@
+# CI — self-contained validation for the public landing site.
+# This is the PUBLIC repo. Keep it standalone: no dependencies on private repos
+# or internal workflows. Public and private stay separate.
 name: ci
 
 on:
@@ -8,6 +11,7 @@ on:
       - '*.css'
       - '*.js'
       - 'assets/**'
+      - '.github/workflows/ci.yml'
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -16,10 +20,42 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
-  validations:
-    uses: JezBlade/Sovereign-Hub/.github/workflows/reusable-validations.yml@main
-    with:
-      repo-type: static
-    secrets:
-      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+  static-validate:
+    name: Static Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Landing artifact present
+        run: |
+          test -f index.html || { echo "::error::index.html missing"; exit 1; }
+          SIZE=$(wc -c < index.html)
+          echo "index.html: ${SIZE} bytes"
+          [ "$SIZE" -gt 1000 ] || { echo "::error::index.html suspiciously small"; exit 1; }
+          echo "HTML files: $(find . -path ./.git -prune -o -name '*.html' -print | wc -l)"
+
+      - name: CNAME intact (custom domain)
+        run: |
+          test -f CNAME || { echo "::error::CNAME missing — custom domain would break"; exit 1; }
+          grep -q 'loomframing.com' CNAME || { echo "::error::CNAME does not point to loomframing.com"; exit 1; }
+          echo "CNAME ok: $(cat CNAME)"
+
+      - name: No secrets committed (public repo hygiene)
+        run: |
+          FOUND=false
+          for pattern in 'sk-[A-Za-z0-9]{32,}' 'ghp_[A-Za-z0-9]{36}' 'AKIA[0-9A-Z]{16}' 'AIza[0-9A-Za-z_-]{35}'; do
+            if grep -rEn "$pattern" \
+                 --include='*.html' --include='*.js' --include='*.css' \
+                 --include='*.json' --include='*.yml' \
+                 --exclude-dir=.git . 2>/dev/null; then
+              echo "::error::Potential secret matching $pattern"
+              FOUND=true
+            fi
+          done
+          [ "$FOUND" = true ] && exit 1 || echo "No hardcoded secrets detected"
