@@ -63,6 +63,28 @@
   .foot a{color:var(--cream-dim)}
   .social{display:flex;gap:16px;margin:14px 0}
   svg.ico{flex:none}
+
+  /* ===== Desktop (>=880px) — mismo codigo responsive; mobile-first queda intacto, solo mejoras de ancho ===== */
+  @media (min-width:880px){
+    .wrap{max-width:1060px;padding:0 32px}
+    .nav .wrap{height:64px}
+    .brand{font-size:20px}
+    .nav a.link{font-size:14px}
+    section{padding:60px 0}
+    /* Texto largo con ancho de lectura (no se estira por todo el monitor) */
+    .lead{max-width:760px}
+    /* CTAs con tope de ancho, centrados */
+    .btn{max-width:340px;margin-left:auto;margin-right:auto}
+    /* Listas de features -> grid de 2 columnas tipo tarjeta (llena el ancho) */
+    #jala,#horno{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:20px;align-items:start}
+    #jala>.sec-label,#jala>h2,#jala>.lead,#horno>.sec-label,#horno>h2,#horno>.lead{grid-column:1/-1}
+    #jala>.row,#horno>.row{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0}
+    #jala>.row .shot{max-width:280px;margin:14px auto 0}
+    /* Tarjetas y tabla: centradas y con tope de ancho */
+    .card{max-width:760px;margin-left:auto;margin-right:auto}
+    table.irc{max-width:760px;margin-left:auto;margin-right:auto}
+    /* Estados de honestidad (5 tarjetas) en 2 columnas dentro de su seccion */
+  }
 </style>
 </head>
 <body>
