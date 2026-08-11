@@ -17,7 +17,10 @@
     <link rel="icon" type="image/png" href="../assets/app-icon-512.png">
 
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"Header Sizing bajo IRC 2018 (Idaho): verifica lo que tu calculadora te dice — con el código en la mano","alternativeHeadline":"Header Sizing Under IRC 2018 (Idaho): How to Verify Framing Calculator Results with Real Code References","inLanguage":"es","author":{"@type":"Organization","name":"Loom Framing"},"publisher":{"@type":"Organization","name":"Loom Framing"},"description":"Cómo verificar un resultado de header sizing bajo IRC 2018 Idaho con span, carga, building width y la tabla correcta de R602.7.","keywords":["header size calculator with code reference","how to verify framing calculator results","header sizing jack studs requirement IRC","calculadora de headers framing codigo","IRC 2018 Idaho header sizing"],"datePublished":"2026-08-11","dateModified":"2026-08-11","mainEntityOfPage":"https://loomframing.com/blog/header-sizing-irc-2018-idaho.html"}
+    {"@context":"https://schema.org","@type":"Article","headline":"Header Sizing bajo IRC 2018 (Idaho): verifica lo que tu calculadora te dice — con el código en la mano","alternativeHeadline":"Header Sizing Under IRC 2018 (Idaho): How to Verify Framing Calculator Results with Real Code References","inLanguage":"es","author":{"@type":"Organization","name":"Loom Framing","description":"Hecha por un framero en Idaho"},"publisher":{"@type":"Organization","name":"Loom Framing"},"description":"Cómo verificar un resultado de header sizing bajo IRC 2018 Idaho con span, carga, building width y la tabla correcta de R602.7.","keywords":["header size calculator with code reference","how to verify framing calculator results","header sizing jack studs requirement IRC","calculadora de headers framing codigo","IRC 2018 Idaho header sizing"],"datePublished":"2026-08-11","dateModified":"2026-08-11","mainEntityOfPage":"https://loomframing.com/blog/header-sizing-irc-2018-idaho.html"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué significa \"building width\" en la tabla de headers?","acceptedAnswer":{"@type":"Answer","text":"Es el ancho del EDIFICIO (lo que tributa carga al header), NO el ancho de tu hueco — el error clásico de lectura."}},{"@type":"Question","name":"¿Cuántos jack studs pide un header?","acceptedAnswer":{"@type":"Answer","text":"Los dicta la misma tabla R602.7 según span y carga — no la costumbre de \"siempre dos\"."}},{"@type":"Question","name":"¿La tabla aplica IRC 2018 o 2021?","acceptedAnswer":{"@type":"Answer","text":"Idaho corre IRC 2018; la lógica es la misma en 2021 pero los valores de tabla pueden variar — verifica la edición de tu estado."}}]}
     </script>
 
     <!-- GA4 -->
@@ -49,6 +52,7 @@
       .blog-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 6vw, 3.25rem); font-weight: 800; margin-top: 0.75rem; letter-spacing: 0.02em; line-height: 1.05; max-width: 960px; margin-left: auto; margin-right: auto; }
       .blog-header .sub { margin-top: 0.6rem; color: #a09882; max-width: 660px; margin-left: auto; margin-right: auto; }
       .blog-header .meta { margin-top: 0.9rem; color: #857d68; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em; }
+      .blog-header .author-note { margin-top: 0.55rem; color: #c9c0ad; font-size: 0.92rem; }
 
       .article { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 1rem; }
       .article .lead { font-size: 1.15rem; color: var(--cafe-700); }
@@ -57,10 +61,12 @@
       .group { margin-top: 2.75rem; }
       .group > h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--cafe-800); letter-spacing: 0.02em; padding-bottom: 0.5rem; border-bottom: 3px solid var(--gold-500); }
       .group > .group-note { color: var(--cafe-500); font-size: 0.95rem; margin-top: 0.6rem; }
+      .answer-first { margin-top: 1rem; background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 0.95rem 1rem; color: var(--cafe-800); font-weight: 600; }
 
       .lesson-card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.45rem 1.4rem; margin-top: 1.25rem; }
       .lesson-card p + p { margin-top: 1rem; }
       .lesson-card .question { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--cafe-800); line-height: 1.12; }
+      .faq-item h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--cafe-800); line-height: 1.1; }
 
       .callout { background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 2.5rem 0 0; }
       .callout p { color: var(--cafe-700); }
@@ -68,9 +74,7 @@
       .callout strong { color: var(--cafe-800); }
 
       .cta-card { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.75rem 1.5rem; margin: 2.5rem 0 1rem; text-align: center; }
-      .cta-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; }
-      .cta-card p { color: #c9c0ad; margin-top: 0.5rem; max-width: 540px; margin-left: auto; margin-right: auto; }
-      .cta-card a { display: inline-block; margin-top: 1.1rem; padding: 0.8rem 2rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+      .cta-card a { display: inline-block; margin-top: 0; padding: 0.8rem 1.1rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
       .cta-card a:hover { background: #cea832; }
 
       .blog-footer { text-align: center; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); margin-top: 2rem; }
@@ -85,6 +89,7 @@
     <h1>Header Sizing bajo IRC 2018 (Idaho): verifica lo que tu calculadora te dice — con el código en la mano</h1>
     <p class="sub">Un header bueno no sale de fe. Sale de cruzar el span, la carga y la tabla correcta, con recibo y sin cuentos.</p>
     <p class="meta">Código en tu idioma &middot; Episodio 2 &middot; 6 min de lectura</p>
+    <p class="author-note">Por el equipo de Loom Framing — hecha por un framero en Idaho.</p>
 </header>
 
 <article class="article">
@@ -94,6 +99,7 @@
     <section class="group">
         <h2>La pregunta que sí importa</h2>
         <p class="group-note">No es “qué me dio la app”. Es “qué tabla respalda ese número y por qué”.</p>
+        <p class="answer-first">Respuesta corta: el header se dimensiona con la tabla del IRC 2018 R602.7 — según el span del hueco, la carga que baja y el building width. Los jack studs salen de la MISMA tabla, no de la costumbre.</p>
 
         <div class="lesson-card">
             <p class="question">Una calculadora te da el header. ¿Le crees a ciegas?</p>
@@ -147,10 +153,25 @@
         <p><strong>No es caja negra.</strong> Chécale las cuentas a tu herramienta como se las checas a un compa: con los ojos abiertos, con la tabla en la mano y entendiendo por qué ese header y esos jack studs son los que tocan.</p>
     </div>
 
+    <section class="group">
+        <h2>Preguntas frecuentes</h2>
+        <p class="group-note">Tres dudas que valen oro antes de cortar un header por costumbre.</p>
+        <div class="lesson-card faq-item">
+            <h3>¿Qué significa &quot;building width&quot; en la tabla de headers?</h3>
+            <p>Es el ancho del EDIFICIO (lo que tributa carga al header), NO el ancho de tu hueco — el error clásico de lectura.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Cuántos jack studs pide un header?</h3>
+            <p>Los dicta la misma tabla R602.7 según span y carga — no la costumbre de &quot;siempre dos&quot;.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿La tabla aplica IRC 2018 o 2021?</h3>
+            <p>Idaho corre IRC 2018; la lógica es la misma en 2021 pero los valores de tabla pueden variar — verifica la edición de tu estado.</p>
+        </div>
+    </section>
+
     <div class="cta-card">
-        <h3>Que el número venga con recibo</h3>
-        <p>Loom te deja abrir el porqué detrás del cálculo: header, rafter y otras cuentas del oficio con su referencia de código y el contexto que sí te ayuda a defender el resultado en la obra.</p>
-        <a href="../">Conoce Loom Framing</a>
+        <a href="../">¿Cuántos jack studs te pide la tabla para ese mismo header en TU zona de nieve? Verifica tu header con la tabla IRC en la bolsa, no en la cabeza.</a>
     </div>
 </article>
 
