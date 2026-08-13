@@ -11,6 +11,9 @@ dist/
 
 # PDF files
 *.pdf
+# Excepcion: las guias PUBLICADAS si van al repo publico (son el asset que se reparte).
+# El *.pdf de arriba se queda como guardrail contra PDFs internos que se cuelen.
+!guias/*.pdf
 
 # Editor/IDE
 .vscode/
