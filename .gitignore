@@ -9,10 +9,22 @@ process.env.*
 dist/
 *.tsbuildinfo
 
-# PDF files
+# ===== PDFs — REGLA DE PRIVACIDAD, no de higiene de repo =====
+# Los usuarios de la app cargan sus PLANOS de obra en PDF. Esos planos son SUYOS y de
+# sus clientes: propiedad ajena, no material nuestro. Y ESTE REPO ES PUBLICO.
+# Un plano que se cuele aqui queda expuesto para siempre en la historia de git —
+# borrarlo del HEAD no lo borra del historial.
+# Por eso *.pdf se bloquea COMPLETO por default.
 *.pdf
+<<<<<<< Updated upstream
 # Excepcion: las guias PUBLICADAS si van al repo publico (son el asset que se reparte).
 # El *.pdf de arriba se queda como guardrail contra PDFs internos que se cuelen.
+=======
+# Unica excepcion: las guias que NOSOTROS publicamos a proposito (el asset que se reparte).
+# MANTENER ESTA EXCEPCION ESTRECHA. No ampliarla a !*.pdf, no moverla, no quitar el
+# bloqueo de arriba. Auditado 2026-08-13: en toda la historia del repo el unico PDF
+# commiteado es guias/10-errores-framing.pdf — cero planos de usuarios filtrados.
+>>>>>>> Stashed changes
 !guias/*.pdf
 
 # Editor/IDE
