@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Por qué no le cortas ni le 'refuerzas' nada a un truss a tu criterio, y por qué el piggyback cobra su cuota de arriostrado — el truss es ingeniería, no criterio de obra.">
+    <meta name="keywords" content="modificar truss obra, reparar truss dañado, piggyback truss bracing, no cortar truss, detalle del fabricante, arriostrado piggyback">
+    <meta name="author" content="Loom Framing">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://loomframing.com/blog/truss-engineering-no-field-modifications.html">
+    <meta property="og:title" content="Trusses: al truss no le pones criterio, le pones el detalle — el código en tu idioma, con el por qué">
+    <meta property="og:description" content="Un truss viene calculado a la libra. Qué SÍ le haces a uno golpeado, qué solo la ingeniería autoriza, y por qué el piggyback cobra su cuota de arriostrado.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loomframing.com/blog/truss-engineering-no-field-modifications.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Trusses: al truss no le pones criterio, le pones el detalle — el código en tu idioma, con el por qué | Loom Framing</title>
+    <link rel="icon" type="image/png" href="../assets/app-icon-512.png">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Trusses: al truss no le pones criterio, le pones el detalle — el código en tu idioma, con el por qué","inLanguage":"es","author":{"@type":"Organization","name":"Loom Framing","description":"Hecha por un framero en Idaho"},"publisher":{"@type":"Organization","name":"Loom Framing"},"description":"El truss es ingeniería armada. Un truss dañado se refuerza provisional y se reporta; el arreglo final lo autoriza la compañía. El piggyback se arriostra con un 2x4 cada 2 pies más su diagonal.","keywords":["modificar truss","reparar truss dañado","piggyback bracing","detalle del fabricante"],"datePublished":"2026-08-13","dateModified":"2026-08-13","mainEntityOfPage":"https://loomframing.com/blog/truss-engineering-no-field-modifications.html"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Puedo cortarle o muescarle algo a un truss para que pase un ducto o un tubo?","acceptedAnswer":{"@type":"Answer","text":"No. Cada miembro carga; cortarle uno desarma el diseño. Los pasos de ductos se planean con el truss desde el diseño, nunca con la sierra en la obra."}},{"@type":"Question","name":"Si un truss llega dañado, ¿lo refuerzo con un 2x?","acceptedAnswer":{"@type":"Answer","text":"Sí, pero provisional — para subirlo y sostenerlo seguro, porque subir uno dañado es peligroso. El arreglo que se queda lo manda la compañía de trusses: reportas el daño y ellos reparan o te mandan la ingeniería del fix (por ejemplo, un sándwich de OSB clavado a cierto patrón). Lo que le hagas antes de su aprobación es provisional."}},{"@type":"Question","name":"¿Cuánto arriostrado lleva un piggyback?","acceptedAnswer":{"@type":"Answer","text":"La regla del oficio es un espaciado, no un número: un 2x4 cada 2 pies a lo largo del cap, amarrándolo al base. No es un conteo fijo — entre más grande el cap, más 2x4 lleva, a la misma separación de 2 pies. Y ese lateral pide su diagonal que lo amarre, o la hilera se corre. El detalle del fabricante confirma la ingeniería de ese truss."}}]}
+    </script>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBQ9B5CTEK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EBQ9B5CTEK');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --gold-500: #b8941f; --gold-700: #816710;
+        --cafe-500: #5a4f3a; --cafe-700: #3d3422; --cafe-800: #2a2418;
+        --cream: #faf9f7; --canvas: #f0ead6; --line: #d9d3c1;
+        --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: var(--font-body); background: var(--cream); color: var(--cafe-800); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+      .blog-header { background: var(--cafe-800); color: var(--cream); padding: 2rem 1.5rem; text-align: center; }
+      .blog-header a.back { color: var(--gold-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+      .blog-header h1 { font-family: var(--font-display); font-size: clamp(2.1rem, 6vw, 3.35rem); font-weight: 800; margin-top: 0.75rem; letter-spacing: 0.02em; line-height: 1.05; max-width: 920px; margin-left: auto; margin-right: auto; }
+      .blog-header .sub { margin-top: 0.6rem; color: #a09882; max-width: 620px; margin-left: auto; margin-right: auto; }
+      .blog-header .meta { margin-top: 0.9rem; color: #857d68; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em; }
+      .blog-header .author-note { margin-top: 0.55rem; color: #c9c0ad; font-size: 0.92rem; }
+
+      .article { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 1rem; }
+      .article .lead { font-size: 1.15rem; color: var(--cafe-700); }
+      .article .lead strong { color: var(--cafe-800); }
+
+      .group { margin-top: 2.75rem; }
+      .group > h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--cafe-800); letter-spacing: 0.02em; padding-bottom: 0.5rem; border-bottom: 3px solid var(--gold-500); }
+      .group > .group-note { color: var(--cafe-500); font-size: 0.95rem; margin-top: 0.6rem; }
+      .answer-first { margin-top: 1rem; background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 0.95rem 1rem; color: var(--cafe-800); font-weight: 600; }
+
+      .lesson-card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.45rem 1.4rem; margin-top: 1.25rem; }
+      .lesson-card p + p { margin-top: 1rem; }
+      .lesson-card .question { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--cafe-800); line-height: 1.12; }
+      .faq-item h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--cafe-800); line-height: 1.1; }
+
+      .callout { background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 2.5rem 0 0; }
+      .callout p { color: var(--cafe-700); }
+      .callout strong { color: var(--cafe-800); }
+
+      .cta-card { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.75rem 1.5rem; margin: 2.5rem 0 1rem; text-align: center; }
+      .cta-card a { display: inline-block; margin-top: 0; padding: 0.8rem 1.1rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
+      .cta-card a:hover { background: #cea832; }
+
+      .blog-footer { text-align: center; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); margin-top: 2rem; }
+      .blog-footer a { color: var(--cafe-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+      .blog-footer a:hover { color: var(--gold-700); }
+    </style>
+</head>
+<body>
+
+<header class="blog-header">
+    <a class="back" href="./">&larr; Blog del Framero</a>
+    <h1>Trusses: al truss no le pones criterio, le pones el detalle — el código en tu idioma, con el por qué</h1>
+    <p class="sub">Un truss viene calculado a la libra. El día que lo cortas, lo "refuerzas" a tu modo o lo arriostras a ojo, rompes ingeniería que no se ve. Por eso el bueno se detiene.</p>
+    <p class="meta">Código en tu idioma &middot; El truss es ingeniería &middot; 6 min de lectura</p>
+    <p class="author-note">Por el equipo de Loom Framing — hecha por un framero en Idaho.</p>
+</header>
+
+<article class="article">
+    <p class="lead">De todo lo que sube a una casa, el truss es lo más calculado que vas a tocar. Cada cuerda, cada diagonal, cada placa está diseñada pa' cargar justo lo que carga — ni de adorno ni de sobra. <strong>No es una tabla que ajustas en la obra; es ingeniería armada.</strong></p>
+    <p class="lead">Por eso esta lección hace pensar hasta al que lleva 20 años: qué SÍ le haces a un truss golpeado y qué solo la ingeniería autoriza, y por qué el grande —el piggyback— cobra una cuota de arriostrado que no sale de tu ojo.</p>
+
+    <section class="group">
+        <h2>La lección, al pie de la letra</h2>
+        <p class="group-note">Sin rebotarla ni maquillarla: así se habla en la obra cuando el truss se instala como se debe.</p>
+        <p class="answer-first">Respuesta corta: al truss no le pones criterio de obra — le pones el detalle. No le cortas ni lo muescas pa' que quepa algo. ¿Y si llega dañado? Se golpean seguido al bajarlos del camión — ahí SÍ lo refuerzas, pero PROVISIONAL, pa' subirlo seguro. El arreglo que se queda lo manda la compañía de trusses con su ingeniería, no tu criterio. Y si es un piggyback, su arriostrado sale de la hoja del fabricante, no de cómo siempre lo haces.</p>
+
+        <div class="lesson-card">
+            <p class="question">El truss dañado: ¿lo refuerzas o no? (la respuesta tiene truco)</p>
+            <p>El truss está calculado a la libra: cada miembro carga su parte, y las placas metálicas —las "plaquitas" que amarran las webs— reparten esa carga por los caminos que el ingeniero diseñó. Un golpe en una web, o una plaquita doblada o floja, y ese camino se rompe.</p>
+            <p>Y se dañan seguido: al bajarlos del camión se golpean. ¿Subirlo dañado así como está? Eso SÍ es peligroso — perdió su ingeniería, y arriba va a cargar.</p>
+            <p>Aquí el truco que hasta al bueno confunde: SÍ lo refuerzas — pero PROVISIONAL. Le pones el 2x o el refuerzo que pida pa' que suba y se sostenga seguro. Eso no es el arreglo final: es pa' que no se caiga ni lastime a nadie mientras.</p>
+            <p>El arreglo de verdad lo manda la compañía de trusses. Reportas el daño, y ellos vienen a repararlo o te mandan la copia de la ingeniería del fix. Por ejemplo: a veces te dicen que le hagas un "sándwich" de OSB o plywood con un patrón de clavado —digamos cada 3 pulgadas—; ese es un fix APROBADO. Hay varios, y todos pasan con SU aprobación.</p>
+            <p>La regla que conviene tener clara: lo que el framero le haga antes de esa aprobación es PROVISIONAL. El fix que se queda es el que la ingeniería autoriza — no el criterio de la obra. Refuerzas pa' que suba seguro; reportas; y el arreglo final viene con papel.</p>
+        </div>
+
+        <div class="lesson-card">
+            <p class="question">El piggyback: ¿por qué el truss grande cobra su cuota de arriostrado?</p>
+            <p>Hay trusses tan grandes que llegan partidos: la base por un lado y el cap —el que se sienta encima— por otro. Llegan así porque enteros no caben en la carretera. Y una vez arriba, dejan de ser un truss de tabla prescriptiva: se vuelven un sistema de ingeniería.</p>
+            <p>Es como el stringer de escalera muy largo que ya pide una bearing wall debajo — lo grande deja de sostenerse por regla de dedo; pide soporte y arriostrado de diseño.</p>
+            <p>Y cobra su cuota en el andamio: el cap se amarra al base con una cama de arriostrado de 2x4. La regla del oficio no es un número — es una separación: un 2x4 cada 2 pies a lo largo del cap. Fíjate en el detalle: NO es "pon ocho y ya". Entre más grande el cap, más 2x4 lleva, a la misma separación de 2 pies. Un número fijo miente porque el tamaño del cap cambia — la regla que no cambia es el espaciado.</p>
+            <p>Por eso no cuentas "los que siempre pongo": los espacías a 2 pies según el cap que te tocó, y el detalle del fabricante te confirma la ingeniería de ESE truss. La regla te da el espaciado; la hoja te confirma el resto.</p>
+            <p>Y aguas con esto, que hasta al bueno se le pasa: ese 2x4 cada 2 pies NO trabaja solo. Pide su diagonal que lo amarre, o toda la hilera se corre y se pandea junta — como una escalera de mano sin nada que la detenga de lado. El lateral aguanta cada punto; el diagonal aguanta la fila entera. Van los dos, o no vale.</p>
+            <p>El error del experimentado: tratar el piggyback como un truss más y arriostrarlo "como siempre". El grande pide su cuota completa — o se mueve, y ahí ya no hay vuelta.</p>
+        </div>
+    </section>
+
+    <div class="callout">
+        <p><strong>Al truss lo respetas leyendo, no adivinando.</strong> El día que le pones criterio de tu cabeza a algo calculado a la libra, rompes ingeniería que no ves — y no se nota hasta que carga. El bueno no es el que improvisa rápido: es el que para, lee la hoja del fabricante, y lo instala al detalle.</p>
+    </div>
+
+    <section class="group">
+        <h2>Preguntas frecuentes</h2>
+        <p class="group-note">Las dudas que más salen cuando el truss te hace pensar.</p>
+        <div class="lesson-card faq-item">
+            <h3>¿Puedo cortarle o muescarle algo a un truss pa' que pase un ducto o un tubo?</h3>
+            <p>No. Cada miembro carga; cortarle uno desarma el diseño. Los pasos de ductos se planean con el truss desde el diseño, nunca con la sierra en la obra.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>Si un truss llega dañado, ¿lo refuerzo con un 2x?</h3>
+            <p>Sí, pero PROVISIONAL — pa' subirlo y sostenerlo seguro, porque subir uno dañado es peligroso. El arreglo que se queda lo manda la compañía de trusses: reportas el daño y ellos reparan o te mandan la ingeniería del fix (por ejemplo, un "sándwich" de OSB clavado a cierto patrón). Lo que le hagas antes de su aprobación es provisional.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Cuánto arriostrado lleva un piggyback?</h3>
+            <p>La regla del oficio es un espaciado, no un número: un 2x4 cada 2 pies a lo largo del cap, amarrándolo al base. No es un conteo fijo — entre más grande el cap, más 2x4 lleva, a la misma separación de 2 pies. Y ese lateral pide su diagonal que lo amarre, o la hilera se corre. El detalle del fabricante confirma la ingeniería de ese truss.</p>
+        </div>
+    </section>
+
+    <div class="cta-card">
+        <a href="../">El detalle vive en la hoja del paquete de trusses — y ahí es donde se instala bien. En Loom traes esa hoja de ingeniería en el celular, en la obra, sin cargar el rollo que se rompe: reactions, bracing y el detalle del fabricante a la mano cuando el truss te hace pensar.</a>
+    </div>
+</article>
+
+<footer class="blog-footer">
+    <a href="./">&larr; Volver al Blog del Framero</a>
+</footer>
+
+<!-- UTM handler (mirrors landing) -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var captured = {};
+  var hasUtm = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { captured[key] = val; hasUtm = true; try { sessionStorage.setItem(key, val); } catch(e) {} }
+    else { try { var stored = sessionStorage.getItem(key); if (stored) captured[key] = stored; } catch(e) {} }
+  });
+  if (hasUtm && typeof gtag === 'function') {
+    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)' });
+    var clean = new URLSearchParams(window.location.search);
+    utmKeys.forEach(function(key) { clean.delete(key); });
+    var newUrl = window.location.pathname + (clean.toString() ? '?' + clean.toString() : '') + window.location.hash;
+    if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); }
+  }
+})();
+</script>
+
+</body>
+</html>

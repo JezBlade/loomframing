@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Por qué el clavado del borde del shear wall no es opcional — 6 no es lo mismo que 4, explicado en voz de obra.">
+    <meta name="keywords" content="shear wall español, clavado del borde, nailing shear wall, muro de corte framing, edge nailing 4 vs 6">
+    <meta name="author" content="Loom Framing">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://loomframing.com/blog/shear-wall-nailing-4-vs-6.html">
+    <meta property="og:title" content="Shear wall: cuando 6 no es lo mismo que 4 — el código en tu idioma, con el por qué">
+    <meta property="og:description" content="El clavado del borde ES la fuerza del muro de corte. Se ve igual a 6 que a 4; su fuerza no. Aquí va el porqué.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loomframing.com/blog/shear-wall-nailing-4-vs-6.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Shear wall: cuando 6 no es lo mismo que 4 — el código en tu idioma, con el por qué | Loom Framing</title>
+    <link rel="icon" type="image/png" href="../assets/app-icon-512.png">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Shear wall: cuando 6 no es lo mismo que 4 — el código en tu idioma, con el por qué","inLanguage":"es","author":{"@type":"Organization","name":"Loom Framing","description":"Hecha por un framero en Idaho"},"publisher":{"@type":"Organization","name":"Loom Framing"},"description":"El clavado del borde ES la fuerza del muro de corte. Se ve igual a 6 que a 4; su fuerza no.","keywords":["shear wall","clavado del borde","edge nailing","muro de corte"],"datePublished":"2026-08-13","dateModified":"2026-08-13","mainEntityOfPage":"https://loomframing.com/blog/shear-wall-nailing-4-vs-6.html"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Por qué el borde lleva más clavos que el centro?","acceptedAnswer":{"@type":"Answer","text":"Porque el borde es donde el panel le pasa la fuerza al resto del muro. Entre más junto el clavo en el borde, más fuerza de corte aguanta."}},{"@type":"Question","name":"¿Puedo poner 6 pulgadas si el plano dice 4?","acceptedAnswer":{"@type":"Answer","text":"No. El espaciado del borde está calculado para la fuerza que ese muro tiene que aguantar. Recortarlo le baja la capacidad, aunque se vea igual."}},{"@type":"Question","name":"¿Qué pasa si el clavo entra muy hundido?","acceptedAnswer":{"@type":"Answer","text":"Si rompe la cara del panel, ya no cuenta como clavo. Clava parejo, sin sumir la cabeza más de lo debido."}}]}
+    </script>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBQ9B5CTEK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EBQ9B5CTEK');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --gold-500: #b8941f; --gold-700: #816710;
+        --cafe-500: #5a4f3a; --cafe-700: #3d3422; --cafe-800: #2a2418;
+        --cream: #faf9f7; --canvas: #f0ead6; --line: #d9d3c1;
+        --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: var(--font-body); background: var(--cream); color: var(--cafe-800); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+      .blog-header { background: var(--cafe-800); color: var(--cream); padding: 2rem 1.5rem; text-align: center; }
+      .blog-header a.back { color: var(--gold-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+      .blog-header h1 { font-family: var(--font-display); font-size: clamp(2.1rem, 6vw, 3.35rem); font-weight: 800; margin-top: 0.75rem; letter-spacing: 0.02em; line-height: 1.05; max-width: 920px; margin-left: auto; margin-right: auto; }
+      .blog-header .sub { margin-top: 0.6rem; color: #a09882; max-width: 620px; margin-left: auto; margin-right: auto; }
+      .blog-header .meta { margin-top: 0.9rem; color: #857d68; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em; }
+      .blog-header .author-note { margin-top: 0.55rem; color: #c9c0ad; font-size: 0.92rem; }
+
+      .article { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 1rem; }
+      .article .lead { font-size: 1.15rem; color: var(--cafe-700); }
+      .article .lead strong { color: var(--cafe-800); }
+
+      .group { margin-top: 2.75rem; }
+      .group > h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--cafe-800); letter-spacing: 0.02em; padding-bottom: 0.5rem; border-bottom: 3px solid var(--gold-500); }
+      .group > .group-note { color: var(--cafe-500); font-size: 0.95rem; margin-top: 0.6rem; }
+      .answer-first { margin-top: 1rem; background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 0.95rem 1rem; color: var(--cafe-800); font-weight: 600; }
+
+      .lesson-card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.45rem 1.4rem; margin-top: 1.25rem; }
+      .lesson-card p + p { margin-top: 1rem; }
+      .lesson-card .question { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--cafe-800); line-height: 1.12; }
+      .faq-item h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--cafe-800); line-height: 1.1; }
+
+      .callout { background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 2.5rem 0 0; }
+      .callout p { color: var(--cafe-700); }
+      .callout strong { color: var(--cafe-800); }
+
+      .cta-card { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.75rem 1.5rem; margin: 2.5rem 0 1rem; text-align: center; }
+      .cta-card a { display: inline-block; margin-top: 0; padding: 0.8rem 1.1rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
+      .cta-card a:hover { background: #cea832; }
+
+      .blog-footer { text-align: center; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); margin-top: 2rem; }
+      .blog-footer a { color: var(--cafe-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+      .blog-footer a:hover { color: var(--gold-700); }
+    </style>
+</head>
+<body>
+
+<header class="blog-header">
+    <a class="back" href="./">&larr; Blog del Framero</a>
+    <h1>Shear wall: cuando 6 no es lo mismo que 4 — el código en tu idioma, con el por qué</h1>
+    <p class="sub">Dos muros idénticos por fuera. Uno aguanta el sismo, el otro no. La diferencia está en el clavado del borde.</p>
+    <p class="meta">Código en tu idioma &middot; Episodio 4 &middot; 4 min de lectura</p>
+    <p class="author-note">Por el equipo de Loom Framing — hecha por un framero en Idaho.</p>
+</header>
+
+<article class="article">
+    <p class="lead">Hay un detalle del shear wall que no se ve terminado y que <strong>cambia todo</strong>: el espaciado del clavado en el borde del panel. Poner 6 pulgadas donde el plano pide 4 se ve igual — pero no es igual.</p>
+    <p class="lead">Esta lección va al grano: qué hace el clavado del borde, por qué el plano lo pide más apretado, y qué te cuesta recortarlo.</p>
+
+    <section class="group">
+        <h2>La lección, al pie de la letra</h2>
+        <p class="group-note">Sin rebotarla ni maquillarla: así se habla en la obra cuando el muro de corte sí va a aguantar.</p>
+        <p class="answer-first">Respuesta corta: el patrón de clavado del borde ES la resistencia del muro de corte. El plano pide el borde más apretado (4, 3, hasta 2 pulgadas) según la fuerza que ese muro tiene que aguantar. Recortarlo a 6 se ve igual — pero le baja fuerte la capacidad.</p>
+
+        <div class="lesson-card">
+            <p class="question">El clavado del borde del shear wall: ¿por qué el plano lo pide tan junto?</p>
+            <p>El shear wall es el muro que evita que la casa se tuerza y se caiga cuando pega un sismo o un ventarrón fuerte. No lo aguanta el panel solito — lo aguanta cómo está clavado ese panel al framing, sobre todo en el borde.</p>
+            <p>El borde es donde el panel le pasa la fuerza al muro de junto. Entre más junto el clavo en el borde, más fuerza aguanta. Por eso el plano marca ese espaciado — 6, 4, 3 o hasta 2 pulgadas — según la demanda de ese muro. No es adorno del plano: es el número que le da la fuerza.</p>
+            <p>Aquí está la trampa: un muro clavado a 6 en el borde se ve idéntico a uno clavado a 4. Pero su fuerza no. Recortar el clavado — poner menos clavos de los que pide el plano — le baja la capacidad sin que se note a simple vista.</p>
+            <p>Y aguas con el clavo hundido: un clavo que entra de más y rompe la cara del panel ya no cuenta. Clava parejo, sin pasarte.</p>
+            <p>El inspector lo mide con cinta. Pero antes que el inspector, lo mide la casa el día que le toque aguantar el sismo.</p>
+        </div>
+    </section>
+
+    <div class="callout">
+        <p><strong>Cuando entiendes que el clavado del borde ES la fuerza del muro, dejas de verlo como "clavos de más".</strong> Cada clavo del borde es la casa quedándose parada el día que tiemble. Ese es el chiste: el muro se ve igual; su fuerza la pones tú.</p>
+    </div>
+
+    <section class="group">
+        <h2>Preguntas frecuentes</h2>
+        <p class="group-note">Las dudas que más salen cuando toca clavar el muro como se debe.</p>
+        <div class="lesson-card faq-item">
+            <h3>¿Por qué el borde lleva más clavos que el centro?</h3>
+            <p>Porque el borde es donde el panel le pasa la fuerza al resto del muro. Entre más junto el clavo en el borde, más fuerza de corte aguanta.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Puedo poner 6 pulgadas si el plano dice 4?</h3>
+            <p>No. El espaciado del borde está calculado para la fuerza que ese muro tiene que aguantar. Recortarlo le baja la capacidad, aunque se vea igual.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Qué pasa si el clavo entra muy hundido?</h3>
+            <p>Si rompe la cara del panel, ya no cuenta como clavo. Clava parejo, sin sumir la cabeza más de lo debido.</p>
+        </div>
+    </section>
+
+    <div class="cta-card">
+        <a href="../">¿Y el clavado de TU próximo shear wall — 6, 4 o 2? El Manual del Framer te explica qué controla cada espaciado, y la calculadora te saca las cuentas del panel.</a>
+    </div>
+</article>
+
+<footer class="blog-footer">
+    <a href="./">&larr; Volver al Blog del Framero</a>
+</footer>
+
+<!-- UTM handler (mirrors landing) -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var captured = {};
+  var hasUtm = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { captured[key] = val; hasUtm = true; try { sessionStorage.setItem(key, val); } catch(e) {} }
+    else { try { var stored = sessionStorage.getItem(key); if (stored) captured[key] = stored; } catch(e) {} }
+  });
+  if (hasUtm && typeof gtag === 'function') {
+    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)' });
+    var clean = new URLSearchParams(window.location.search);
+    utmKeys.forEach(function(key) { clean.delete(key); });
+    var newUrl = window.location.pathname + (clean.toString() ? '?' + clean.toString() : '') + window.location.hash;
+    if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); }
+  }
+})();
+</script>
+
+</body>
+</html>
