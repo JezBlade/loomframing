@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Qué es un girder truss, por qué su armado va de 1 a 4 o más plies según la carga, y por qué la clavada entre capas y los hangers no se improvisan — explicado en voz de obra.">
+    <meta name="keywords" content="girder truss installation load hangers, que es un girder truss framing, girder truss sandwich plies, hangers para trusses, truss layout letras, multi-ply girder fastening, IRC R802.10">
+    <meta name="author" content="Loom Framing">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://loomframing.com/blog/girder-truss-load-hangers.html">
+    <meta property="og:title" content="El girder: el truss que carga a los demás — el código en tu idioma, con el por qué">
+    <meta property="og:description" content="En el layout es una G. En el techo es el jefe de la zona: desde una pieza sola hasta cuatro o más plies en sandwich — lo dicta lo que carga. Armarlo a medias es falla esperando la nevada.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loomframing.com/blog/girder-truss-load-hangers.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>El girder: el truss que carga a los demás — el código en tu idioma, con el por qué | Loom Framing</title>
+    <link rel="icon" type="image/png" href="../assets/app-icon-512.png">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"El girder: el truss que carga a los demás — el código en tu idioma, con el por qué","inLanguage":"es","author":{"@type":"Organization","name":"Loom Framing","description":"Hecha por un framero en Idaho"},"publisher":{"@type":"Organization","name":"Loom Framing"},"description":"Qué es un girder truss, por qué su armado va de 1 a 4 o más plies según la carga, y por qué la clavada entre capas y los hangers no se improvisan.","keywords":["girder truss","multi-ply girder","truss hangers","girder truss plies","truss layout"],"datePublished":"2026-08-19","dateModified":"2026-08-19","mainEntityOfPage":"https://loomframing.com/blog/girder-truss-load-hangers.html"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué es un girder truss?","acceptedAnswer":{"@type":"Answer","text":"El truss que carga a otros trusses. Va donde el techo cambia de dirección o hay un hueco, y su armado lo dicta la carga: puede ser una pieza sola o correr hasta cuatro o más plies en sandwich, según la hoja del fabricante."}},{"@type":"Question","name":"¿Puedo usar otro hanger si no llegó el que marca el layout?","acceptedAnswer":{"@type":"Answer","text":"No. El layout especifica modelo y clavado exactos porque por ese hanger baja una carga concentrada. Si falta el correcto, se consigue — no se sustituye."}},{"@type":"Question","name":"¿Qué reviso antes de cerrar el techo?","acceptedAnswer":{"@type":"Answer","text":"Que el girder traiga todas sus plies, que la clavada del girder vaya como pide la hoja, que cada hanger tenga todos sus clavos del tipo que marca — y que abajo del girder esté el apoyo que pide el plano (jack studs, squash blocks): la carga tiene que llegar hasta la fundación. Si algo no cuadra: la hoja primero, y al ingeniero."}}]}
+    </script>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBQ9B5CTEK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EBQ9B5CTEK');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --gold-500: #b8941f; --gold-700: #816710;
+        --cafe-500: #5a4f3a; --cafe-700: #3d3422; --cafe-800: #2a2418;
+        --cream: #faf9f7; --canvas: #f0ead6; --line: #d9d3c1;
+        --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: var(--font-body); background: var(--cream); color: var(--cafe-800); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+      .blog-header { background: var(--cafe-800); color: var(--cream); padding: 2rem 1.5rem; text-align: center; }
+      .blog-header a.back { color: var(--gold-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+      .blog-header h1 { font-family: var(--font-display); font-size: clamp(2.1rem, 6vw, 3.35rem); font-weight: 800; margin-top: 0.75rem; letter-spacing: 0.02em; line-height: 1.05; max-width: 920px; margin-left: auto; margin-right: auto; }
+      .blog-header .sub { margin-top: 0.6rem; color: #a09882; max-width: 620px; margin-left: auto; margin-right: auto; }
+      .blog-header .meta { margin-top: 0.9rem; color: #857d68; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em; }
+      .blog-header .author-note { margin-top: 0.55rem; color: #c9c0ad; font-size: 0.92rem; }
+
+      .article { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 1rem; }
+      .article .lead { font-size: 1.15rem; color: var(--cafe-700); }
+      .article .lead strong { color: var(--cafe-800); }
+
+      .group { margin-top: 2.75rem; }
+      .group > h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--cafe-800); letter-spacing: 0.02em; padding-bottom: 0.5rem; border-bottom: 3px solid var(--gold-500); }
+      .group > .group-note { color: var(--cafe-500); font-size: 0.95rem; margin-top: 0.6rem; }
+      .answer-first { margin-top: 1rem; background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 0.95rem 1rem; color: var(--cafe-800); font-weight: 600; }
+
+      .lesson-card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.45rem 1.4rem; margin-top: 1.25rem; }
+      .lesson-card p + p { margin-top: 1rem; }
+      .lesson-card .question { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--cafe-800); line-height: 1.12; }
+      .faq-item h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--cafe-800); line-height: 1.1; }
+
+      .callout { background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 2.5rem 0 0; }
+      .callout p { color: var(--cafe-700); }
+      .callout strong { color: var(--cafe-800); }
+
+      .sigue { margin-top: 2.5rem; background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.25rem; }
+      .sigue a { color: var(--gold-700); font-weight: 700; text-decoration: none; }
+      .sigue a:hover { text-decoration: underline; }
+
+      .cta-card { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.75rem 1.5rem; margin: 2.5rem 0 1rem; text-align: center; }
+      .cta-card a { display: inline-block; margin-top: 0; padding: 0.8rem 1.1rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
+      .cta-card a:hover { background: #cea832; }
+
+      .blog-footer { text-align: center; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); margin-top: 2rem; }
+      .blog-footer a { color: var(--cafe-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+      .blog-footer a:hover { color: var(--gold-700); }
+    </style>
+</head>
+<body>
+
+<header class="blog-header">
+    <a class="back" href="./">&larr; Blog del Framero</a>
+    <h1>El girder: el truss que carga a los demás — el código en tu idioma, con el por qué</h1>
+    <p class="sub">En el layout es una G. En el techo es el jefe de la zona: desde una pieza sola hasta cuatro o más plies en sandwich — lo dicta lo que carga. Armarlo a medias es falla esperando la nevada.</p>
+    <p class="meta">Código en tu idioma &middot; Serie Vetas &middot; 4 min de lectura</p>
+    <p class="author-note">Por el equipo de Loom Framing — hecha por un framero en Idaho.</p>
+</header>
+
+<article class="article">
+    <p class="lead">El layout del techo trae letras — T, G, M — y cada una te dice qué tan pesado va a estar tu día. Los T van en serie y llevan el ritmo de la cuadrilla. Pero la <strong>G</strong> es la que pide respeto: ahí el techo no se reparte parejo — se concentra.</p>
+    <p class="lead">Esta lección va al grano: qué hace un girder, por qué su hoja pide sandwich, y por qué sus hangers no se cambian "por uno parecido".</p>
+
+    <section class="group">
+        <h2>La lección, al pie de la letra</h2>
+        <p class="group-note">Sin rebotarla ni maquillarla: así se habla en la obra cuando la G del layout se arma como manda su papel.</p>
+        <p class="answer-first">Respuesta corta: el girder <strong>carga otros trusses</strong>. Por eso su armado no es de cajón: puede venir de una pieza sola o correr hasta cuatro o más plies en sandwich — lo dicta la carga, y lo dice su hoja. Y los trusses que le llegan se conectan con hangers de modelo y clavado <strong>exactos</strong> del layout. Ahí no hay margen: ni una ply menos, ni un hanger sustituido.</p>
+
+        <div class="lesson-card">
+            <p class="question">El girder truss: ¿por qué su hoja pide sandwich y hangers exactos?</p>
+            <p>Las letras del layout son el plan de batalla. Los T llenan el techo de lado a lado, repetidos. La G marca donde el techo cambia de dirección o hay un hueco — y ahí un truss solo no aguanta: el girder recibe la carga de <strong>varios trusses juntos</strong>, concentrada en una sola pieza.</p>
+            <p>Por eso no es un truss cualquiera. Y ojo: el número de plies <strong>no es costumbre</strong> — hay girders de una sola pieza y hay girders de cuatro o más plies en sandwich; lo dicta la carga que ese girder recibe, y lo dice su hoja. Lo que amarra el sandwich es <strong>la clavada del girder</strong>: el patrón de clavos entre capas que marca el fabricante. Y no es adorno: cada conexión entre capas carga <strong>el acumulado</strong> de las plies restantes — por eso el patrón y el espaciado no se negocian. Esa clavada ES el girder — te faltó una ply o la clavada entre capas, y lo que armaste se ve igual desde abajo… pero no es un girder.</p>
+            <p>Los trusses que le llegan se conectan <strong>como diga el layout</strong> — y cuando es hanger, que es lo más común, con el modelo exacto y los clavos exactos que marca. Cambiar el hanger por "uno parecido" o rellenar los hoyos con el clavo que había en el cinto — y la carga concentrada ya no tiene por dónde bajar completa.</p>
+            <p>En lo que es del truss, el papel del fabricante gobierna: layout más las hojas de cada pieza. ¿El plano y el papel no cuadran, una pieza llegó lastimada? Nadie improvisa: <strong>se para y se pregunta</strong> — eso lo zanja el ingeniero, no la cuadrilla. Al girder <strong>no se le improvisa</strong> refuerzo en la obra.</p>
+            <p>Y la pregunta que casi nadie hace: la carga ENTRA al girder… ¿y por dónde SALE? Por eso la hoja trae sus <strong>reactions</strong> — esos números son lo que alguien ABAJO tiene que cargar: jack studs, squash blocks, el camino completo hasta la fundación, como marque el plano. Un girder perfecto parado sobre pared de cajón es la misma falla — nomás un piso más abajo.</p>
+            <p>Y el porqué con cara: la zona que el girder carga es casi siempre la sala o la cocina — el techo sobre donde la familia pasa el día. Un girder a medias no truena el día que lo armas: espera la nevada.</p>
+        </div>
+    </section>
+
+    <div class="callout">
+        <p><strong>Cuando entiendes que el girder carga a los demás, la G del layout deja de ser una letra</strong> y se vuelve la zona donde no se improvisa: todas sus plies, la clavada del girder como manda la hoja, y cada hanger con su modelo y sus clavos. El techo de la sala entera depende de que esa G se arme como dice su papel.</p>
+    </div>
+
+    <section class="group">
+        <h2>Preguntas frecuentes</h2>
+        <p class="group-note">Las dudas que más salen cuando el layout trae su G y la grúa ya viene en camino.</p>
+        <div class="lesson-card faq-item">
+            <h3>¿Qué es un girder truss?</h3>
+            <p>El truss que carga a otros trusses. Va donde el techo cambia de dirección o hay un hueco, y su armado lo dicta la carga: puede ser una pieza sola o correr hasta cuatro o más plies en sandwich, según la hoja del fabricante.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Puedo usar otro hanger si no llegó el que marca el layout?</h3>
+            <p>No. El layout especifica modelo y clavado exactos porque por ese hanger baja una carga concentrada. Si falta el correcto, se consigue — no se sustituye.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Qué reviso antes de cerrar el techo?</h3>
+            <p>Que el girder traiga todas sus plies, que la clavada del girder vaya como pide la hoja, que cada hanger tenga todos sus clavos del tipo que marca — y que ABAJO del girder esté el apoyo que pide el plano (jack studs, squash blocks): la carga tiene que llegar hasta la fundación. Si algo no cuadra: la hoja primero, y al ingeniero.</p>
+        </div>
+    </section>
+
+    <div class="sigue">
+        <p>Esta pieza es hermana de la de <a href="truss-engineering-no-field-modifications.html">la hoja de ingeniería del truss — por qué al truss no le pones criterio, le pones el detalle</a>: ahí vive el porqué de que la hoja sea palabra del ingeniero; aquí, lo que esa palabra le pide a tu G.</p>
+    </div>
+
+    <div class="cta-card">
+        <a href="../">¿Y la G de TU próximo layout — ya sabes qué le cuelga encima? El Manual Técnico de Trusses te desmenuza las familias letra por letra, y con Loom traes las hojas del fabricante en el celular, ahí en la obra.</a>
+    </div>
+</article>
+
+<footer class="blog-footer">
+    <a href="./">&larr; Volver al Blog del Framero</a>
+</footer>
+
+<!-- UTM handler (mirrors landing) -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var captured = {};
+  var hasUtm = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { captured[key] = val; hasUtm = true; try { sessionStorage.setItem(key, val); } catch(e) {} }
+    else { try { var stored = sessionStorage.getItem(key); if (stored) captured[key] = stored; } catch(e) {} }
+  });
+  if (hasUtm && typeof gtag === 'function') {
+    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)' });
+    var clean = new URLSearchParams(window.location.search);
+    utmKeys.forEach(function(key) { clean.delete(key); });
+    var newUrl = window.location.pathname + (clean.toString() ? '?' + clean.toString() : '') + window.location.hash;
+    if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); }
+  }
+})();
+</script>
+
+</body>
+</html>
