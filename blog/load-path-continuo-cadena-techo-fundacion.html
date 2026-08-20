@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="El continuous load path en voz de obra: por qué una casa se voltea con el viento por un eslabón que faltó, no porque la madera falló. La cadena que amarra el techo a la fundación, eslabón por eslabón.">
+    <meta name="keywords" content="continuous load path, load path framing, cadena de carga techo fundación, por qué se voltea una casa con viento, uplift techo fundación, eslabón débil estructura, para qué sirve el hurricane tie">
+    <meta name="author" content="Loom Framing">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://loomframing.com/blog/load-path-continuo-cadena-techo-fundacion.html">
+    <meta property="og:title" content="El load path continuo: la casa no se cae por la madera, se cae por el eslabón que faltó">
+    <meta property="og:description" content="La gravedad baja solita. El viento que jala el techo pa' arriba y el temblor que mece la casa — esos viajan por lo que tú clavas: ties, sheathing y blocking.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loomframing.com/blog/load-path-continuo-cadena-techo-fundacion.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>El load path continuo: la casa no se cae por la madera, se cae por el eslabón que faltó | Loom Framing</title>
+    <link rel="icon" type="image/png" href="../assets/app-icon-512.png">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"El load path continuo: la casa no se cae por la madera, se cae por el eslabón que faltó","inLanguage":"es","author":{"@type":"Organization","name":"Loom Framing","description":"Hecha por un framero en Idaho"},"publisher":{"@type":"Organization","name":"Loom Framing"},"description":"El continuous load path en voz de obra: por qué una casa se voltea con el viento por un eslabón que faltó, no porque la madera falló. La cadena que amarra el techo a la fundación, eslabón por eslabón.","keywords":["continuous load path","load path framing","cadena de carga techo fundación","por qué se voltea una casa con viento","uplift techo fundación","eslabón débil estructura","para qué sirve el hurricane tie"],"datePublished":"2026-08-20","dateModified":"2026-08-20","mainEntityOfPage":"https://loomframing.com/blog/load-path-continuo-cadena-techo-fundacion.html"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Y si mi techo es de trusses, no de rafters?","acceptedAnswer":{"@type":"Answer","text":"Igualito. El truss trae su geometría de fábrica, pero el eslabón que TÚ pones es el mismo: el hurricane tie que lo amarra al top plate con todos sus clavos. La cadena sigue: truss → muro → piso → fundación."}},{"@type":"Question","name":"¿El hurricane tie de verdad hace tanta diferencia?","acceptedAnswer":{"@type":"Answer","text":"Es la conexión que pelea el uplift, el jalón del viento que quiere levantar el techo. Sin ella, la orilla del techo es justo el hueco que la tormenta busca. Con todos sus clavos del diámetro correcto vale su número; con clavos cortos o de menos, no."}},{"@type":"Question","name":"¿El hurricane tie aguanta también el empuje lateral?","acceptedAnswer":{"@type":"Answer","text":"No: ese pelea el uplift (el jalón pa' arriba). El empuje lateral (el que mece la casa de lado) viaja por otro camino — el clavado del sheathing del techo y el blocking del talón hasta el top plate. Dos fuerzas, dos caminos; por eso ambos van, y por eso el blocking del talón no se salta."}},{"@type":"Question","name":"¿Cómo sé si mi load path está completo?","acceptedAnswer":{"@type":"Answer","text":"Sigue la cadena de arriba a abajo y pregunta en cada salto quién amarra: techo→muro (hurricane tie), muro→muro entre pisos (strap/sheathing), muro→fundación (anchor bolt/holdown). Donde no hay quién, ahí está el hueco."}}]}
+    </script>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBQ9B5CTEK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EBQ9B5CTEK');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --gold-500: #b8941f; --gold-700: #816710;
+        --cafe-500: #5a4f3a; --cafe-700: #3d3422; --cafe-800: #2a2418;
+        --cream: #faf9f7; --canvas: #f0ead6; --line: #d9d3c1;
+        --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: var(--font-body); background: var(--cream); color: var(--cafe-800); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+      .blog-header { background: var(--cafe-800); color: var(--cream); padding: 2rem 1.5rem; text-align: center; }
+      .blog-header a.back { color: var(--gold-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+      .blog-header h1 { font-family: var(--font-display); font-size: clamp(2.1rem, 6vw, 3.35rem); font-weight: 800; margin-top: 0.75rem; letter-spacing: 0.02em; line-height: 1.05; max-width: 920px; margin-left: auto; margin-right: auto; }
+      .blog-header .sub { margin-top: 0.6rem; color: #a09882; max-width: 620px; margin-left: auto; margin-right: auto; }
+      .blog-header .meta { margin-top: 0.9rem; color: #857d68; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em; }
+      .blog-header .author-note { margin-top: 0.55rem; color: #c9c0ad; font-size: 0.92rem; }
+
+      .article { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 1rem; }
+      .article .lead { font-size: 1.15rem; color: var(--cafe-700); }
+      .article .lead strong { color: var(--cafe-800); }
+
+      .group { margin-top: 2.75rem; }
+      .group > h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--cafe-800); letter-spacing: 0.02em; padding-bottom: 0.5rem; border-bottom: 3px solid var(--gold-500); }
+      .group > .group-note { color: var(--cafe-500); font-size: 0.95rem; margin-top: 0.6rem; }
+      .answer-first { margin-top: 1rem; background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 0.95rem 1rem; color: var(--cafe-800); font-weight: 600; }
+
+      .lesson-card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.45rem 1.4rem; margin-top: 1.25rem; }
+      .lesson-card p + p { margin-top: 1rem; }
+      .lesson-card .question { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--cafe-800); line-height: 1.12; }
+      .faq-item h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--cafe-800); line-height: 1.1; }
+
+      .callout { background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 2.5rem 0 0; }
+      .callout p { color: var(--cafe-700); }
+      .callout strong { color: var(--cafe-800); }
+
+      .sigue { margin-top: 2.5rem; background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.25rem; }
+      .sigue a { color: var(--gold-700); font-weight: 700; text-decoration: none; }
+      .sigue a:hover { text-decoration: underline; }
+
+      .cta-card { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.75rem 1.5rem; margin: 2.5rem 0 1rem; text-align: center; }
+      .cta-card a { display: inline-block; margin-top: 0; padding: 0.8rem 1.1rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
+      .cta-card a:hover { background: #cea832; }
+
+      .blog-footer { text-align: center; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); margin-top: 2rem; }
+      .blog-footer a { color: var(--cafe-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+      .blog-footer a:hover { color: var(--gold-700); }
+    </style>
+</head>
+<body>
+
+<header class="blog-header">
+    <a class="back" href="./">&larr; Blog del Framero</a>
+    <h1>El load path continuo: la casa no se cae por la madera, se cae por el eslabón que faltó</h1>
+    <p class="sub">La gravedad baja solita. El viento que JALA el techo pa' arriba y el temblor que mece la casa — esos solo viajan por lo que tú clavas: los ties, el sheathing, el blocking. Y la cadena vale lo que su eslabón más débil.</p>
+    <p class="meta">Código en tu idioma &middot; Serie Vetas &middot; 6 min de lectura</p>
+    <p class="author-note">Por el equipo de Loom Framing — hecha por un framero en Idaho.</p>
+</header>
+
+<article class="article">
+    <p class="lead">Todos los conectores que el plano te manda clavar — el hurricane tie del truss, el strap que cruza el piso, el holdown, el anchor bolt de la solera — cuentan la misma historia desde un pedazo distinto. Esta es la historia completa, la que amarra todo el oficio: el continuous load path, la cadena que lleva la carga del techo hasta la tierra. Entiéndela una vez, y cada fierro del plano deja de ser fierro suelto: se vuelve un eslabón con nombre y con trabajo.</p>
+
+    <section class="group">
+        <h2>La lección, al pie de la letra</h2>
+        <p class="group-note">Sin rebotarla ni maquillarla: así se habla en la obra cuando la cadena sí está completa.</p>
+        <p class="answer-first">Respuesta corta: el peso de gravedad — el techo, la nieve, la gente — baja solito por la madera: del techo al muro, al piso, a la fundación, a la tierra. Ese no da lata. El pleito son las OTRAS fuerzas: el viento que empuja la pared de lado, el que JALA el techo pa' arriba con fuerza tremenda, y el sismo que mece la casa. Esas no bajan solas — no hay gravedad que las lleve. Viajan por lo que tú clavas, y aguas: <strong>no solo el fierro.</strong> El <strong>uplift</strong> (el jalón pa' arriba) lo pelean los ties de metal; el empuje <strong>lateral</strong> viaja por el clavado del <strong>sheathing</strong> y el <strong>blocking</strong> hasta el muro. Falta uno de esos eslabones, y por ahí se parte.</p>
+
+        <div class="lesson-card">
+            <p class="question">El load path continuo: ¿por qué una casa se voltea con el viento si la madera estaba buena?</p>
+            <p>La cadena vale lo que su eslabón más débil, y el viento y el temblor no son tontos: buscan el hueco. ¿Le faltó el hurricane tie a un truss? Por ahí levanta el techo. ¿Se te olvidó el strap que amarra el muro de arriba con el de abajo cruzando la banda del piso? Por ahí se separan los pisos. ¿El bottom plate sin sus anchor bolts ni su holdown? Por ahí la casa se voltea de su base. Y una conexión floja no falla sola: la carga brinca a la vecina, la sobrecarga, y se van cayendo en fila — la falla cascada. Los colapsos de viento fuerte casi siempre arrancan en un eslabón que faltó — un gable que se abrió, una solera sin anclar. No es que la madera <strong>nunca</strong> falle (puede: un bottom chord se troza a contrahílo) — es la casa <strong>vieja, sin la cadena completa,</strong> la que se va; cuando la cadena viene entera, aguanta. En el huracán Ian (2022), de 455 casas al código moderno de Florida, <strong>ninguna</strong> tuvo daño estructural por viento; las de antes, el doble. Y aguas con una vía que NO es eslabón: si revienta la puerta del garage o una ventana, el viento se mete y presiona la casa desde adentro — eso no lo pone el framero, pero conviene saberlo.</p>
+        </div>
+    </section>
+
+    <section class="group">
+        <h2>El cómo, eslabón por eslabón</h2>
+        <p class="group-note">Techo de trusses, como se arma la cadena completa en la obra.</p>
+        <div class="lesson-card">
+            <p><strong>El roof sheathing</strong> clavado DENTRO del framing — así el techo se vuelve un <strong>diafragma</strong> que ATRAPA el empuje lateral (que el clavo agarre madera, no nomás roce el panel).</p>
+            <p><strong>El blocking del talón</strong> entre trusses — por ahí el empuje lateral del techo ENTRA al top plate. Aguas: el hurricane tie pelea el jalón pa' arriba; el <strong>cortante lo lleva el blocking, no el tie.</strong></p>
+            <p>Cada <strong>truss</strong> amarrado al top plate con su <strong>hurricane tie</strong> y TODOS sus clavos — ese pelea el <strong>uplift</strong>.</p>
+            <p>El <strong>muro de arriba</strong> conectado al de abajo con strap o sheathing continuo que cruza la banda del piso.</p>
+            <p>El <strong>muro anclado a la fundación</strong> con anchor bolts y los holdowns del plano.</p>
+            <p>Cada uno lo pide el plano por una razón — no es fierro decorativo.</p>
+        </div>
+    </section>
+
+    <div class="callout">
+        <p><strong>La regla mental que amarra todo el oficio:</strong> párate en cualquier punto de la casa y sigue la fuerza — pa' arriba y pa' abajo. ¿Por dónde baja la gravedad? ¿Por dónde se resiste el jalón? Si en algún eslabón la respuesta es <em>nada</em>, ahí es donde la casa se va a partir el día que sople de verdad. El load path no se ve en la foto terminada; se siente el día de la tormenta, cuando la casa se queda entera porque cada eslabón estaba en su lugar.</p>
+    </div>
+
+    <section class="group">
+        <h2>Preguntas frecuentes</h2>
+        <p class="group-note">Las dudas que más salen cuando toca seguir la cadena completa.</p>
+        <div class="lesson-card faq-item">
+            <h3>¿Y si mi techo es de trusses, no de rafters?</h3>
+            <p>Igualito. El truss trae su geometría de fábrica, pero el eslabón que TÚ pones es el mismo: el hurricane tie que lo amarra al top plate con todos sus clavos. La cadena sigue: truss → muro → piso → fundación.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿El hurricane tie de verdad hace tanta diferencia?</h3>
+            <p>Es la conexión que pelea el uplift, el jalón del viento que quiere levantar el techo. Sin ella, la orilla del techo es justo el hueco que la tormenta busca. Con todos sus clavos del diámetro correcto vale su número; con clavos cortos o de menos, no.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿El hurricane tie aguanta también el empuje lateral?</h3>
+            <p>No: ese pelea el <strong>uplift</strong> (el jalón pa' arriba). El empuje <strong>lateral</strong> (el que mece la casa de lado) viaja por otro camino — el clavado del sheathing del techo y el <strong>blocking del talón</strong> hasta el top plate. Dos fuerzas, dos caminos; por eso ambos van, y por eso el blocking del talón no se salta.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Cómo sé si mi load path está completo?</h3>
+            <p>Sigue la cadena de arriba a abajo y pregunta en cada salto quién amarra: techo→muro (hurricane tie), muro→muro entre pisos (strap/sheathing), muro→fundación (anchor bolt/holdown). Donde no hay quién, ahí está el hueco.</p>
+        </div>
+    </section>
+
+    <div class="sigue">
+        <p>Si quieres ver la cadena trabajando en piezas concretas, brinca al <a href="temporary-truss-bracing-bcsi.html">brace temporal de trusses</a> y al <a href="shear-wall-nailing-4-vs-6.html">clavado del shear wall</a>. Y si quieres las marcas del oficio juntas en una hoja, bájate la <a href="../guias/10-errores-framing.html">Guía gratis: El framero completo</a>.</p>
+    </div>
+
+    <div class="cta-card">
+        <a href="../">En TU próxima chamba, párate en una esquina y sigue el jalón hasta la fundación — ¿cada eslabón tiene quién? El Manual te sigue la cadena entera, con su porqué, en el celular, en la obra.</a>
+    </div>
+</article>
+
+<footer class="blog-footer">
+    <a href="./">&larr; Volver al Blog del Framero</a>
+</footer>
+
+<!-- UTM handler (mirrors landing) -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var captured = {};
+  var hasUtm = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { captured[key] = val; hasUtm = true; try { sessionStorage.setItem(key, val); } catch(e) {} }
+    else { try { var stored = sessionStorage.getItem(key); if (stored) captured[key] = stored; } catch(e) {} }
+  });
+  if (hasUtm && typeof gtag === 'function') {
+    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)' });
+    var clean = new URLSearchParams(window.location.search);
+    utmKeys.forEach(function(key) { clean.delete(key); });
+    var newUrl = window.location.pathname + (clean.toString() ? '?' + clean.toString() : '') + window.location.hash;
+    if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); }
+  }
+})();
+</script>
+
+</body>
+</html>
