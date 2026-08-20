@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decodifica la línea de braced wall de tu plano: casi nunca cae en la orilla, cruza por en medio sobre una pared que no carga peso y aun así detiene el viento. Qué te toca a ti, qué le toca al de la roca, y el clavo que no es 16d.">
+    <meta name="keywords" content="braced wall line, braced wall panel, gypsum board bracing GB, blocking entre trusses, bottom plate nailing diámetro, IRC R602.10.8, non-bearing wall bracing, decodificar línea braced wall plano, clavo nailgun 0.131 vs 16d">
+    <meta name="author" content="Loom Framing">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://loomframing.com/blog/braced-wall-line-decodificar-plano.html">
+    <meta property="og:title" content="La línea de braced wall que cruza el corazón de tu casa: qué te manda construir">
+    <meta property="og:description" content="Casi nunca cae en la orilla: cruza por en medio, sobre una pared que no carga peso y aun así detiene el viento. Qué te toca a ti, qué le toca al de la roca, y el clavo que no es 16d.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loomframing.com/blog/braced-wall-line-decodificar-plano.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>La línea de braced wall que cruza el corazón de tu casa: qué te manda construir | Loom Framing</title>
+    <link rel="icon" type="image/png" href="../assets/app-icon-512.png">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"La línea de braced wall que cruza el corazón de tu casa: qué te manda construir","inLanguage":"es","author":{"@type":"Organization","name":"Loom Framing","description":"Hecha por un framero en Idaho"},"publisher":{"@type":"Organization","name":"Loom Framing"},"description":"Decodifica la línea de braced wall de tu plano: qué es, qué te manda construir el código (blocking, cajitas entre trusses, bottom plate), qué te toca a ti y qué le toca al de la roca. IRC R602.10, truss-first Idaho.","keywords":["braced wall line","braced wall panel","gypsum board bracing GB","blocking entre trusses","bottom plate nailing diámetro","IRC R602.10.8","non-bearing wall bracing","decodificar línea braced wall plano","clavo nailgun 0.131 vs 16d"],"datePublished":"2026-08-20","dateModified":"2026-08-20","mainEntityOfPage":"https://loomframing.com/blog/braced-wall-line-decodificar-plano.html"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Hay un símbolo estándar para la braced wall line?","acceptedAnswer":{"@type":"Answer","text":"No. El código exige mostrarla y etiquetarla, pero cada diseñador o jurisdicción la dibuja a su modo. No busques el símbolo: busca el código de método (WSP, CS-WSP, GB, PFH) y el schedule. Ahí está la instrucción."}},{"@type":"Question","name":"¿En serio la tabla roca detiene la casa?","acceptedAnswer":{"@type":"Answer","text":"Sí: el método GB es arriostre válido en el código cuando se clava con su patrón apretado, no como colgado normal. Por eso importa que ese muro se marque y el de la roca sepa que no es un muro cualquiera."}},{"@type":"Question","name":"¿Cuántos clavos van en el bottom plate de un braced wall panel?","acceptedAnswer":{"@type":"Answer","text":"Depende del diámetro del clavo, no de cómo se llame. 16d common (0.162 pulg) van 2; 16d box (0.135 pulg) van 3; el de la nailgun (0.131 pulg) van 4, todos a 16 pulgadas. Mira la caja, no te fíes del 16d de boca en boca."}},{"@type":"Question","name":"¿Y si el truss corre al hilo de la pared?","acceptedAnswer":{"@type":"Answer","text":"Dos casos (R602.10.8): si un truss, rim, band o header cae justo encima, ese sustituye al bloqueo y lo clavas corrido. Si no hay miembro justo encima, va blocking de peralte completo a 16 pulgadas o.c. entre los trusses de cada lado (R602.10.8.1)."}},{"@type":"Question","name":"¿El blocking de arriba va cada otro truss?","acceptedAnswer":{"@type":"Answer","text":"No es cuestión de frecuencia. Lo manda la altura del talón y la zona sísmica (SDC). En Idaho (SDC C/D) va; sobre el braced wall panel es continuo. Fuera de los paneles, con talón bajo, se puede espaciar para la ventilación del ático."}}]}
+    </script>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBQ9B5CTEK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EBQ9B5CTEK');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --gold-500: #b8941f; --gold-700: #816710;
+        --cafe-500: #5a4f3a; --cafe-700: #3d3422; --cafe-800: #2a2418;
+        --cream: #faf9f7; --canvas: #f0ead6; --line: #d9d3c1;
+        --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: var(--font-body); background: var(--cream); color: var(--cafe-800); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+
+      .blog-header { background: var(--cafe-800); color: var(--cream); padding: 2rem 1.5rem; text-align: center; }
+      .blog-header a.back { color: var(--gold-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+      .blog-header h1 { font-family: var(--font-display); font-size: clamp(2.1rem, 6vw, 3.35rem); font-weight: 800; margin-top: 0.75rem; letter-spacing: 0.02em; line-height: 1.05; max-width: 920px; margin-left: auto; margin-right: auto; }
+      .blog-header .sub { margin-top: 0.6rem; color: #a09882; max-width: 620px; margin-left: auto; margin-right: auto; }
+      .blog-header .meta { margin-top: 0.9rem; color: #857d68; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.03em; }
+      .blog-header .author-note { margin-top: 0.55rem; color: #c9c0ad; font-size: 0.92rem; }
+
+      .article { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 1rem; }
+      .article .lead { font-size: 1.15rem; color: var(--cafe-700); }
+      .article .lead + .lead { margin-top: 1rem; }
+      .article .lead strong { color: var(--cafe-800); }
+
+      .group { margin-top: 2.75rem; }
+      .group > h2 { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--cafe-800); letter-spacing: 0.02em; padding-bottom: 0.5rem; border-bottom: 3px solid var(--gold-500); }
+      .group > .group-note { color: var(--cafe-500); font-size: 0.95rem; margin-top: 0.6rem; }
+      .answer-first { margin-top: 1rem; background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 0.95rem 1rem; color: var(--cafe-800); font-weight: 600; }
+
+      .lesson-card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.45rem 1.4rem; margin-top: 1.25rem; }
+      .lesson-card p + p { margin-top: 1rem; }
+      .lesson-card .question { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--cafe-800); line-height: 1.12; }
+      .faq-item h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--cafe-800); line-height: 1.1; }
+
+      .callout { background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 1.1rem 1.25rem; margin: 2.5rem 0 0; }
+      .callout p { color: var(--cafe-700); }
+      .callout strong { color: var(--cafe-800); }
+
+      .sigue { margin-top: 2.5rem; background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.25rem; }
+      .sigue a { color: var(--gold-700); font-weight: 700; text-decoration: none; }
+      .sigue a:hover { text-decoration: underline; }
+
+      .cta-card { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.75rem 1.5rem; margin: 2.5rem 0 1rem; text-align: center; }
+      .cta-card a { display: inline-block; margin-top: 0; padding: 0.8rem 1.1rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
+      .cta-card a:hover { background: #cea832; }
+
+      .nota-viva { max-width: 760px; margin: 2rem auto 0; padding: 0 1.5rem; font-size: 0.85rem; color: var(--cafe-500); font-style: italic; text-align: center; line-height: 1.55; }
+
+      .blog-footer { text-align: center; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); margin-top: 2rem; }
+      .blog-footer a { color: var(--cafe-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+      .blog-footer a:hover { color: var(--gold-700); }
+    </style>
+</head>
+<body>
+
+<header class="blog-header">
+    <a class="back" href="./">&larr; Blog del Framero</a>
+    <h1>La línea de braced wall que cruza el corazón de tu casa: qué te manda construir</h1>
+    <p class="sub">Esa línea casi nunca cae en la orilla — cruza por en medio, sobre una pared normalita que no carga ni tantito peso. Y aun así, si le fallas, la casa se descuadra el día que sople duro. Aquí la decodificamos: qué es, qué te toca a TI, y qué le toca a otro.</p>
+    <p class="meta">Código en tu idioma &middot; Serie Vetas &middot; 8 min de lectura</p>
+    <p class="author-note">Por el equipo de Loom Framing — hecha por un framero en Idaho.</p>
+</header>
+
+<article class="article">
+    <p class="lead">Todo framer las ha visto: esas líneas marcadas en el plano que dicen "braced wall". Y muchos, en corto, nunca las acaban de descifrar — no por burros, sino porque andan buscando un símbolo que memorizar, y ese símbolo no existe. Pero hay algo que confunde todavía más: <strong>esas líneas casi nunca caen en la pared de afuera.</strong> Cruzan por en medio de la casa, de orilla a orilla, y se paran encima de una pared normalita — una que no carga techo, no carga piso, no carga NADA de peso. La clase de pared que cualquiera diría "ésta la quito y no pasa nada."</p>
+    <p class="lead">Pues no. Esa pared sin peso encima es eslabón de una cadena — la que pelea el viento y el temblor que empujan la casa de lado. Déjala mal, y el día que sople duro, la casa se descuadra por ahí. <strong>No carga peso, pero no se quita.</strong> Ésa es la veta.</p>
+
+    <section class="group">
+        <h2>La lección, al pie de la letra</h2>
+        <p class="group-note">Answer-first: lo que esa línea te está mandando, sin rodeos.</p>
+        <p class="answer-first">La línea de braced wall no te dice cómo se ve — te manda a un <strong>schedule</strong> (una tabla) que trae el <strong>código de método</strong>: WSP, CS-WSP, GB, PFH… Ese código ES la instrucción — material, clavado y cuántos pies de pared arriostrada van en esa línea. Y aquí está lo que casi ningún artículo te dice: <strong>el método cambia si la pared es de AFUERA o de ADENTRO — y cambia también QUIÉN puede echarte a perder el trabajo.</strong></p>
+
+        <div class="lesson-card">
+            <p><strong>Afuera vs. adentro — no es la misma chamba:</strong></p>
+            <p><strong>Pared de afuera</strong> → casi siempre WSP o CS-WSP: forras con OSB de arriba abajo y clavas por el schedule (típico 8d @ 6" en orilla, 12" en campo). Aquí el riesgo es TUYO: si el clavado del forro sale flojo, tú lo hiciste, tú lo compones.</p>
+            <p><strong>Pared de adentro</strong> → en residencial moderno, casi siempre GB (gypsum board — sí, la mera tabla roca). Y aquí se pone bueno, porque el riesgo ya no es nada más tuyo.</p>
+        </div>
+
+        <div class="lesson-card">
+            <p class="question">¿La tabla roca de veras detiene la casa?</p>
+            <p>La que bracea la mayoría de las paredes de adentro es el <strong>drywall</strong>. El código lo cuenta como método de arriostre válido (GB) — suena raro, pero sí: cuando se clava con el patrón apretado que pide el método, no como colgado de todos los días. Y ahí está la trampa que te muerde sin que la veas.</p>
+        </div>
+    </section>
+
+    <section class="group">
+        <h2>Las tres chambas — quién hace qué</h2>
+        <p class="group-note">Tres cosas que suenan igual pero NO son la misma — y una ni siquiera es tuya.</p>
+        <div class="lesson-card">
+            <p><strong>1. El bloqueo dentro de la pared</strong> — que la tabla roca tenga madera dónde agarrar en toda orilla. El método GB pide clavado de orilla a 7", y una orilla necesita algo en qué clavar: los bordes verticales caen en studs, pero cualquier junta que no caiga en stud se queda sin respaldo. Por eso bloqueas la pared. <strong>Ésa es TU chamba</strong> — es lo que el plano te pide cuando dice "bloquear esas paredes".</p>
+            <p><strong>2. El atornillado apretado de la tabla roca</strong> — el patrón del método GB, más cerrado que el colgado normal. <strong>Ésa NO es tu chamba: es del de la roca.</strong> PERO aguas: si nadie le avisa que ESE muro es braced wall panel, lo cuelga como cualquier otro, el patrón no se cumple, y el panel deja de existir — sin que se vea, sin que nadie lo note, y con el framer cargando la culpa. Por eso el oficio completo es: <strong>marca ese muro y avísale al de la roca.</strong> No es tu tornillo, pero sí es tu deber que el panel no se pierda.</p>
+            <p><strong>3. Las cajitas de arriba</strong> — los bloques entre trusses encima de esa pared, que le bajan el cortante del techo. <strong>Ésa es TU chamba otra vez</strong> — y es la que amarra la cadena de arriba.</p>
+        </div>
+    </section>
+
+    <section class="group">
+        <h2>El cómo — la cadena HORIZONTAL que te manda construir</h2>
+        <p class="group-note">Truss-first, Idaho. La hermana del load path: aquél baja la gravedad; ésta pelea el empuje de lado. Una secuencia de manos, de arriba pa'bajo.</p>
+        <div class="lesson-card">
+            <p><strong>1. El diafragma del techo</strong> — el OSB clavado a los trusses trabaja como una gran viga plana que atrapa el viento.</p>
+            <p><strong>2. Arriba, fíjate CÓMO te cayó el truss</strong> — de ahí depende todo lo que sigue:</p>
+            <p style="margin-left: 1rem;"><strong>Truss cruzado (perpendicular)</strong> → van las cajitas entre trusses (bloques de 2x a la medida del espacio: 22½" a 24" OC, 14½" a 16" OC), a plomo sobre la doble solera. En residencial las armas TÚ — no llegan en el camión (eso es comercial o energy heels altos). Clávalas al truss con 2 clavos 8d en toenail, cada extremo (Tabla R602.3(1), renglón 29); en obra muchos le meten más (2-10d por lado, o clips A35/LTP4 si el cortante pega fuerte).</p>
+            <p style="margin-left: 1rem;"><strong>Truss al hilo, con un miembro justo encima</strong> → ese truss (o un rim/band/header corrido) <strong>sustituye al bloqueo</strong> (R602.10.8.2). Lo clavas corrido al top plate por la Tabla R602.3(1); tu plano puede apretar el paso.</p>
+            <p style="margin-left: 1rem;"><strong>Truss al hilo, sin miembro encima</strong> → va blocking de peralte completo a 16" o.c. entre los dos trusses de cada lado de la pared (R602.10.8.1). Ése es el "2x4 a cada 16" de la obra — y sí, es código.</p>
+            <p><strong>3. La transferencia techo→pared</strong> (lo que en algunos planos marcan "B1", "B2"…): el forro del techo clavado al borde de la cajita —o al truss corrido, según el caso— (8d @ 6", la orilla del diafragma), y de ahí a la solera. Eso evita que el techo se resbale sobre la pared como tapa suelta de caja de zapatos. Aguas: en las PUNTAS de la corrida, cada bloque se quiere voltear — por eso ahí el detalle pide fierro (conector de uplift).</p>
+            <p><strong>4. El braced wall panel</strong> — la pared misma (GB adentro, WSP afuera), que no se descuadra en paralelogramo.</p>
+            <p><strong>5. Abajo, el bottom plate anclado y clavado</strong> — y aquí una regla que salva la solera: el clavado sigue al PANEL, no a la pared. El plano marca un tramo de panel (4 pies es lo común, pero puede pedir 8, 10 o 12) y ESE tramo lleva el clavado apretado; el resto no. Apretar toda la pared te raja la solera; clavar apretado nomás 4 pies cuando el plano pedía 12 te deja el panel a medias. Más los anchor bolts al cimiento.</p>
+        </div>
+        <div class="lesson-card">
+            <p class="question">¿Cuánto blocking va arriba?</p>
+            <p>No es "cada otro truss" — eso es mito. Lo manda la <strong>altura del talón (heel) + la zona sísmica (SDC)</strong>: SDC A/B/C con talón ≤ 9¼" no pide blocking; de 9¼" a 15¼" blocking sólido cortado en obra; SDC D0/D1/D2 hasta 15¼" el blocking VA; arriba de 15¼" (energy heels altos) una de cuatro vías especiales, y ahí sí puede llegar del fabricante. Idaho cae mucho en SDC C y D — así que aquí, casi siempre va.</p>
+        </div>
+    </section>
+
+    <div class="callout">
+        <p>La línea de braced wall es el plano de una <strong>segunda cadena — la HORIZONTAL</strong>. El load path baja la gravedad; ésta pelea el viento y el temblor. Y como toda cadena, vale por su eslabón más débil. Lo delicado de ésta es que uno de sus eslabones —el atornillado de la tabla roca— <strong>ni siquiera lo pones tú.</strong> Por eso el framer completo no nada más clava lo suyo: marca el muro, avisa al otro oficio y se asegura de que la cadena entera quede. Porque el día que sople, la inspección no pregunta quién puso cuál tornillo.</p>
+    </div>
+
+    <div class="callout">
+        <p><strong>La regla de oro que amarra todo:</strong> no adivines el método — léelo en el schedule, y sabe tu SDC. En sismo bajo-a-moderado (SDC A/B/C) la GB interior es lo normal. Pero en zona sísmica alta (SDC D0/D1/D2 — y hay buena parte de Idaho ahí) el código <strong>restringe la GB como panel de arriostre</strong>, así que tu plano te manda WSP hasta en una pared de adentro (y en las cripple walls, bajo SDC C/D, a fuerza WSP/CS-WSP). El método no lo decides de memoria; lo deciden tu SDC y tu schedule.</p>
+    </div>
+
+    <section class="group">
+        <h2>El error que nadie ve: tu pistola no dispara un 16d</h2>
+        <p class="group-note">El error costoso que no se ve — y de dónde salió.</p>
+        <div class="lesson-card">
+            <p>A mí me lo dijeron una vez en una obra: <em>"esto lleva clavada especial"</em> — y no le entendí completo, así que clavé lo que creí haber entendido. No fue de burro: "clavada especial" no es una instrucción, es un aviso de que hay algo que saber, sin decir qué. Le pasa a todo framer. Por eso éste va completo, pa' que a ti no te agarre.</p>
+            <p>El código pa' clavar el bottom plate del panel te da tres opciones, y <strong>el número de clavos cambia con el DIÁMETRO, no con el nombre:</strong></p>
+            <p style="margin-left: 1rem;"><strong>16d common (0.162")</strong> → 2 clavos<br><strong>16d box (0.135")</strong> → 3 clavos<br><strong>clavo de 3" × 0.131" (el de tu nailgun)</strong> → <strong>4 clavos</strong></p>
+            <p>…todos a 16" o.c. La frase que anda de boca en boca es "tres dieciséis a dieciséis". Pero <strong>el clavo que tu pistola dispara hoy no es un 16d</strong> — es el 0.131, más delgadito, y con ése el código pide <strong>CUATRO, no tres.</strong> El que oye "tres" y trae pistola, dispara tres: un clavo de menos en cada grupo, cada 16 pulgadas, a lo largo de TODO el panel. Eso es <strong>25% menos conexión</strong> — no se ve, pasa la inspección visual ("ahí están los tres, se ve bien"), y el panel no vale lo que el plano dice que vale.</p>
+            <p><strong>La verdad en una línea: el código no cuenta clavos, cuenta DIÁMETRO.</strong> "16d" es un nombre; lo que manda es 0.135, 0.162 o 0.131. La pistola cambió el oficio, y la tabla sigue hablando en penny sizes.</p>
+            <p><strong>El check de 5 segundos:</strong> antes de disparar en un braced wall panel, mira la CAJA de tus clavos y busca el diámetro, no el nombre. <strong>0.131 → van 4 &middot; 0.135 → van 3 &middot; 0.162 → van 2.</strong> Todos a 16 pulgadas.</p>
+        </div>
+    </section>
+
+    <section class="group">
+        <h2>Preguntas frecuentes</h2>
+        <p class="group-note">Las dudas que más salen con la braced wall line.</p>
+        <div class="lesson-card faq-item">
+            <h3>¿Hay un símbolo estándar pa' la braced wall line?</h3>
+            <p>No. El código exige mostrarla y etiquetarla, pero cada diseñador o jurisdicción la dibuja a su modo. No busques el símbolo — busca el código de método (WSP, CS-WSP, GB, PFH) y el schedule. Ahí está la instrucción.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿En serio la tabla roca detiene la casa?</h3>
+            <p>Sí: el método GB es arriostre válido en el código cuando se clava con su patrón apretado, no como colgado normal. Por eso importa tanto que ESE muro se marque y el de la roca sepa que no es un muro cualquiera.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿El blocking de arriba va cada otro truss?</h3>
+            <p>No es cuestión de frecuencia. Lo manda la altura del talón y la zona sísmica (SDC). En Idaho (SDC C/D) va; sobre el braced wall panel es continuo. Fuera de los paneles, con talón bajo, se puede espaciar pa' la ventilación del ático.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Las cajitas me llegan cortadas del proveedor?</h3>
+            <p>En residencial, no: las armas tú en la obra, de 2x, a la medida entre trusses. Cortadas del fabricante es lo de comercial/apartamentos o energy heels altos — y ésas sí, como el truss, no se cortan ni se sustituyen a ojo.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Y si el truss corre AL HILO de la pared?</h3>
+            <p>Dos casos (R602.10.8): si un truss (o rim/band/header) cae justo encima, ése sustituye al bloqueo y lo clavas corrido (~6"). Si NO hay miembro justo encima, va blocking de peralte completo a 16" o.c. entre los trusses de cada lado (R602.10.8.1). Regla de dedo: cruzado → cajitas &middot; al hilo con miembro → clavas el corrido &middot; al hilo sin miembro → blocking a 16".</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Cuántos clavos van en el bottom plate de un braced wall panel?</h3>
+            <p>Depende del DIÁMETRO del clavo, no de cómo se llame. 16d common (0.162") van 2 &middot; 16d box (0.135") van 3 &middot; el de la nailgun (0.131") van 4 — todos a 16". Mira la caja, no te fíes del "16d" de boca en boca.</p>
+        </div>
+        <div class="lesson-card faq-item">
+            <h3>¿Y el detalle "B1" de mi plano?</h3>
+            <p>"B1" es clave de ESE juego de planos, no un término universal. Lo que muestra es la transferencia: el techo le entrega su cortante a la cajita, y la cajita a la pared. Busca el detalle de corte donde el techo se conecta al muro — así se llame B1, B2 o como sea.</p>
+        </div>
+    </section>
+
+    <div class="sigue">
+        <p>Si quieres la cadena VERTICAL que baja la gravedad, brinca al <a href="load-path-continuo-cadena-techo-fundacion.html">load path continuo</a> — ésta es su hermana horizontal. Y pa'l clavado que sí o sí importa, el <a href="shear-wall-nailing-4-vs-6.html">clavado del shear wall (4 vs 6)</a>. Y si quieres las marcas del oficio en una hoja, bájate la <a href="../guias/10-errores-framing.html">Guía gratis: El framero completo</a>.</p>
+    </div>
+
+    <div class="cta-card">
+        <a href="../">En TU próximo plano, cuando veas esa línea cruzar por en medio de la casa: no es pared de adorno, es eslabón. Lee el método, arma tu bloqueo y tus cajitas, avisa al de la roca — y antes de disparar, mira el diámetro en la caja de tus clavos. El Manual te lo decodifica completo, con su porqué, en el celular, en la obra.</a>
+    </div>
+
+    <p class="nota-viva">Nota — guía viva: esta lección cita el IRC 2018 y la seguimos afinando contra las fuentes de código; unos cuantos números finos siguen en verificación. Manda siempre tu plano sellado y tu inspector local — ellos ganan. ¿Ves algo que no cuadra con tu obra? Dínoslo, y la mejoramos entre todos, framero con framero.</p>
+</article>
+
+<footer class="blog-footer">
+    <a href="./">&larr; Volver al Blog del Framero</a>
+</footer>
+
+<!-- UTM handler (mirrors landing) -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var captured = {};
+  var hasUtm = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { captured[key] = val; hasUtm = true; try { sessionStorage.setItem(key, val); } catch(e) {} }
+    else { try { var stored = sessionStorage.getItem(key); if (stored) captured[key] = stored; } catch(e) {} }
+  });
+  if (hasUtm && typeof gtag === 'function') {
+    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)' });
+    var clean = new URLSearchParams(window.location.search);
+    utmKeys.forEach(function(key) { clean.delete(key); });
+    var newUrl = window.location.pathname + (clean.toString() ? '?' + clean.toString() : '') + window.location.hash;
+    if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); }
+  }
+})();
+</script>
+
+</body>
+</html>
