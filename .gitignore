@@ -69,3 +69,6 @@ private/
 docs/internal/
 docs/council/
 docs/artifacts/
+
+# Artefactos de trabajo del pipeline del iman (backups v2, PNGs de gate, intermedios _v4_lite) — NO al sitio vivo
+guias/_*
