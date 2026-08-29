@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>El framero completo — las marcas del oficio | Loom Framing</title>
-<meta name="description" content="Guía gratis: las marcas del framero completo — mente, cuerpo, voluntad y alma. El porqué de cada una y el número del código que la respalda. En español, trade terms en inglés. Hecha por un framero.">
+<meta name="description" content="Guía gratis: las 12 marcas del framero completo — mente, cuerpo, voluntad y alma. El porqué de cada una y el número del código que la respalda. En español, trade terms en inglés. Hecha por un framero.">
 <link rel="canonical" href="https://loomframing.com/guias/el-framero-completo.html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://loomframing.com/guias/el-framero-completo.html">
@@ -49,22 +49,47 @@
   .box{background:var(--amber-bg);border:1px solid var(--amber-bd);border-radius:10px;padding:1rem 1.1rem;color:var(--amber-ink);margin:1.5rem 0}
   .box .lbl{display:block;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem;opacity:.85}
   .box p{font-family:var(--disp);font-weight:700;font-size:1.45rem;line-height:1.15;text-transform:uppercase}
-  .dim{font-family:var(--disp);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gold-ink);margin:1.5rem 0 .1rem;display:flex;align-items:baseline;gap:.6rem}
+  .dim{font-family:var(--disp);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:.04em;color:var(--gold-ink);margin:1.75rem 0 .1rem;display:flex;align-items:baseline;gap:.6rem}
   .dim small{font-family:var(--body);font-weight:600;font-size:.82rem;text-transform:none;letter-spacing:0;color:var(--cafe-800);opacity:.72}
+
+  /* --- tarjeta de marca: mismo lenguaje visual que el PDF --- */
+  .mark{border:1px solid var(--hair);border-radius:10px;padding:.9rem 1rem 1rem;margin:.7rem 0 0;background:var(--cream)}
+  .mark h3{font-family:var(--disp);font-weight:800;font-size:1.18rem;line-height:1.1;text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:baseline;gap:.55rem;margin-bottom:.45rem}
+  .mark h3 .n{font-family:var(--mono);font-weight:700;font-size:.85rem;color:var(--gold-ink)}
+  .mark h3 .n::before{content:"";display:inline-block;width:.8rem;height:.8rem;border:2px solid var(--gold);border-radius:3px;margin-right:.45rem;vertical-align:baseline}
+  .mark p{font-size:.96rem}
+  .obra{background:var(--kraft-bg);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:.6rem .8rem;margin-top:.7rem;font-size:.9rem;color:var(--kraft-ink)}
+  .obra .lbl{font-family:var(--mono);font-weight:700;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);margin-right:.4rem}
+  code{font-family:var(--mono);font-size:.86em;background:var(--amber-bg);border:1px solid var(--amber-bd);border-radius:4px;padding:.05rem .3rem}
+
+  /* --- el corte: lo que falta --- */
+  .falta{background:var(--cafe-800);color:var(--cream);border-radius:10px;padding:1.2rem 1.15rem;margin:1.9rem 0 0}
+  .falta .lbl{display:block;font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream-acc);margin-bottom:.5rem}
+  .falta h2{font-family:var(--disp);font-weight:800;font-size:1.6rem;line-height:1.08;text-transform:uppercase;margin-bottom:.6rem}
+  .falta ul{margin:.6rem 0 0}
+  .falta li{padding:.34rem 0 .34rem 1.4rem;border-bottom:1px solid rgba(250,249,247,.14);font-size:.95rem}
+  .falta li:last-child{border-bottom:0}
+  .falta li::before{content:"→";position:absolute;left:0;color:var(--cream-acc);border:0;width:auto;height:auto;top:.34rem}
+
   ul{list-style:none;margin:.4rem 0 0}
   li{position:relative;padding:.42rem 0 .42rem 1.9rem;border-bottom:1px solid var(--hair);font-size:.98rem}
   li:last-child{border-bottom:0}
   li::before{content:"";position:absolute;left:0;top:.72rem;width:.85rem;height:.85rem;border:2px solid var(--gold);border-radius:3px}
   li b{font-weight:600}
-  .cta{display:block;text-align:center;background:var(--cafe-800);color:var(--cream);text-decoration:none;border-radius:10px;padding:1.05rem 1.25rem;margin:1.75rem 0 .6rem;font-family:var(--disp);font-weight:800;font-size:1.35rem;text-transform:uppercase;letter-spacing:.03em}
-  .cta span{display:block;font-family:var(--mono);font-weight:400;font-size:.72rem;text-transform:none;letter-spacing:0;color:var(--cream-acc);margin-top:.3rem}
+
+  .cta{display:block;text-align:center;background:var(--cafe-800);color:var(--cream);text-decoration:none;border-radius:10px;padding:1.05rem 1.25rem;margin:1.1rem 0 .6rem;font-family:var(--disp);font-weight:800;font-size:1.35rem;text-transform:uppercase;letter-spacing:.03em}
+  .cta span{display:block;font-family:var(--mono);font-weight:400;font-size:.72rem;text-transform:none;letter-spacing:0;color:var(--cream-acc);margin-top:.35rem;line-height:1.45}
+  .cta-top{background:var(--gold);color:var(--cafe-800);margin:1.25rem 0 .4rem}
+  .cta-top span{color:var(--gold-ink)}
+  .cta-note{font-family:var(--mono);font-size:.72rem;color:var(--meta);text-align:center;margin-bottom:.4rem}
+
   .kraft{background:var(--kraft-bg);border:1px solid var(--kraft-bd);border-radius:10px;padding:1rem 1.1rem;color:var(--kraft-ink);margin:1.5rem 0;font-size:.95rem}
   .kraft .lbl{display:block;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:.35rem}
   .chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--hair)}
   .chip{font-family:var(--mono);font-size:.72rem;padding:.35rem .7rem;border:1px solid var(--hair);border-radius:20px;background:var(--kraft-bg);color:var(--kraft-ink)}
   footer{max-width:46rem;margin:0 auto;padding:1.25rem 1.5rem 2.5rem;font-size:.82rem;color:var(--meta)}
   footer a{color:var(--gold-ink)}
-  @media (max-width:30rem){ h1{font-size:2.1rem} .box p{font-size:1.25rem} }
+  @media (max-width:30rem){ h1{font-size:2.1rem} .box p{font-size:1.25rem} .cta{font-size:1.2rem} .falta h2{font-size:1.4rem} }
 </style>
 </head>
 <body>
@@ -79,6 +104,25 @@
   <p class="sub1">— mente, cuerpo, voluntad y alma.</p>
   <div class="rule"></div>
 
+  <p class="lead"><b>Doce marcas del oficio</b>, cada una con su porqué y el número del código que la respalda.
+  Seis páginas pa' imprimir, traer en la troca <b>y irlas palomeando</b>.</p>
+
+  <!-- AGUAS: este onclick es LO ÚNICO que mide file_download. El toggle "File downloads" del Enhanced
+       Measurement está APAGADO a propósito (2026-08-21). No lo quites sin prender el toggle, ni prendas
+       el toggle sin quitarlo: juntos = doble conteo.
+       NOTA v2: hay DOS botones con el mismo onclick. Un visitante toca uno u otro, nunca los dos en el
+       mismo gesto, así que sigue siendo UN evento por descarga. Si algún día se mide "cuál botón jaló",
+       se hace con un parámetro extra (p.ej. cta_pos), NO con un segundo evento.
+       REDLINE cf 2026-08-29: per-gesto sí, pero per-SESIÓN un curioso puede tocar los DOS (las etiquetas
+       distintas invitan el 2o tap) = 2 file_download del mismo PDF. Guard `window.__dl`: el evento dispara
+       UNA vez por carga; el href download sigue en cada tap. Protege la conversión del Gate A. -->
+  <a class="cta cta-top" href="/guias/el-framero-completo.pdf" download
+     onclick="if(!window.__dl){window.__dl=1;gtag('event','file_download',{file_name:'el-framero-completo.pdf',file_extension:'pdf',link_text:'Bajar la hoja',link_url:'/guias/el-framero-completo.pdf',source:'iman_landing'});}">
+    Bajar la hoja
+    <span>PDF · 6 páginas · gratis · sin correo ni registro</span>
+  </a>
+  <p class="cta-note">O léete abajo tres de las doce, a ver si te suenan.</p>
+
   <div class="box">
     <span class="lbl">La pregunta</span>
     <p>¿Cuántas de estas marcas ya son tuyas?</p>
@@ -88,47 +132,57 @@
   Pide las cuatro: <b>mente</b>, que es el conocimiento del oficio; <b>cuerpo</b>, la condición pa' levantar
   con las manos lo que la mente ya sabe; <b>voluntad</b>, la disciplina que no se quiebra; y <b>alma</b> — meterle el alma es darlo todo:
   las otras tres hechas una, y en ellas el reflejo de lo bueno que hay en ti.
-  El framero completo trae las cuatro. <b>Ese vale más, y se nota a leguas quién sí.</b>
-  Estas marcas lo dicen.</p>
+  El framero completo trae las cuatro. <b>Ese vale más, y se nota a leguas quién sí.</b></p>
 
   <div class="dim">Mente <small>el conocimiento del oficio</small></div>
-  <ul>
-    <li>Shear wall: por qué <b>6 no es lo mismo que 4</b> — la carga manda</li>
-    <li>El header dimensionado al derecho — <b>IRC R602.7</b>, y aguanta</li>
-    <li>16 o 24 OC según la carga, <b>no la costumbre</b></li>
-  </ul>
+  <div class="mark">
+    <h3><span class="n">01</span> El shear wall que sí trabaja</h3>
+    <p>El patrón de clavado <b>ES</b> la resistencia del muro — más apretado en la orilla que en el campo.
+    Recortar el borde le baja fuerte la capacidad: parece igual, su fuerza no. Es lo que evita que la casa
+    se ladee y se abra con un ventarrón o un temblón — porque adentro va a dormir gente.</p>
+    <div class="obra"><span class="lbl">En obra</span>Respeta el spacing del plano al pie (<code>borde ≠ campo</code>). El inspector lo mide con cinta.</div>
+  </div>
 
   <div class="dim">Cuerpo <small>levantar con las manos lo que la mente sabe</small></div>
-  <ul>
-    <li>El clavo <b>a ras</b> que sí agarra — ni hundido ni brincado</li>
-    <li>Crown arriba: el piso que queda plano, no esponjado</li>
-    <li>Glue + ring-shank: el piso que <b>no rechina</b> en diez años</li>
-  </ul>
-
-  <div class="dim">Voluntad <small>la disciplina inquebrantable</small></div>
-  <ul>
-    <li>El brace del truss, <b>siempre</b> — sin brace no hay truss (<b>BCSI</b>)</li>
-    <li>Si hay hoyo, lleva clavo — el hurricane tie <b>completo</b>, sin excusas</li>
-    <li>El anchor bolt que sienta la casa — uno cerca de cada esquina, sin saltarse el que estorba</li>
-  </ul>
+  <div class="mark">
+    <h3><span class="n">05</span> Crown arriba: el piso que queda plano</h3>
+    <p>Cada tabla trae su curva. El crown va para <b>ARRIBA</b> — bajo carga se asienta plano; al revés se hunde:
+    el piso esponjoso que el GC te llama de vuelta. El ojo que sabe hace <i>sight the crown</i> antes de clavar,
+    toda la cuadrilla parejo, para arriba.</p>
+    <div class="obra"><span class="lbl">En obra</span>Sight the crown antes de clavar. Una tabla al revés se siente al caminar el piso.</div>
+  </div>
 
   <div class="dim">Alma <small>darlo todo — las otras tres, hechas una</small></div>
-  <ul>
-    <li>Fire blocking donde va — la chamba invisible que cuida a la familia (<b>IRC R302.11</b>)</li>
-    <li>El splice del top plate que nadie revisa — bien hecho <b>porque tú sabes que ahí está</b> (<b>IRC R602.3.2</b>)</li>
-    <li>La nail plate que cuida al que viene — un clavo futuro no perfora el tubo ni el cable</li>
-  </ul>
+  <div class="mark">
+    <h3><span class="n">12</span> La nail plate que cuida al que viene</h3>
+    <p>Cuando el plomero o el eléctrico barrena un stud pa' su tubo o su cable, la nail plate va encima:
+    un clavo futuro — el tuyo o el del que venga — no perfora el agua ni la corriente. Nadie te lo va a
+    agradecer y nadie lo revisa; lo pones porque cuidas al que va a vivir ahí y al que viene después de ti.
+    <b>Eso es el oficio con alma.</b></p>
+    <div class="obra"><span class="lbl">En obra</span>Stud barrenado o muescado cerca de la cara → nail plate de metal. Protege el tubo y el cable.</div>
+  </div>
 
-  <!-- AGUAS: este onclick es LO ÚNICO que mide file_download. El toggle "File downloads" del Enhanced Measurement está APAGADO a propósito (2026-08-21). No lo quites sin prender el toggle, ni prendas el toggle sin quitarlo: juntos = doble conteo. -->
+  <div class="falta">
+    <span class="lbl">Van tres · faltan nueve</span>
+    <h2>Lo que trae la hoja y no cabe aquí</h2>
+    <ul>
+      <li>Las <b>12 marcas completas</b>, una dimensión por hoja — con su porqué y su <b>En obra</b>, como las tres de arriba.</li>
+      <li>El <b>header dimensionado</b>, el <b>OC que sale de la carga</b>, el <b>clavo a ras</b>, <b>glue + ring-shank</b>, el <b>brace del truss</b>, el <b>hurricane tie completo</b>, el <b>anchor bolt</b>, el <b>fire blocking</b> y el <b>splice del top plate</b>.</li>
+      <li>Los números que la respaldan: <code>IRC R602.7</code> · <code>IRC R302.11</code> · <code>IRC R602.3.2</code> · <code>BCSI</code>.</li>
+      <li>Una última hoja — <b>“Por qué lo hacemos bien”</b> — que es la razón de todo lo demás.</li>
+      <li>El <b>cuadrito pa' palomear</b> cada marca. Eso el teléfono no lo hace; el papel sí.</li>
+    </ul>
+  </div>
+
   <a class="cta" href="/guias/el-framero-completo.pdf" download
-     onclick="gtag('event','file_download',{file_name:'el-framero-completo.pdf',file_extension:'pdf',link_text:'Bajar la hoja',link_url:'/guias/el-framero-completo.pdf',source:'iman_landing'});">
-    Bajar la hoja
-    <span>PDF · 6 páginas · para imprimir y traer en la troca</span>
+     onclick="if(!window.__dl){window.__dl=1;gtag('event','file_download',{file_name:'el-framero-completo.pdf',file_extension:'pdf',link_text:'Bajar la hoja',link_url:'/guias/el-framero-completo.pdf',source:'iman_landing'});}">
+    Bajar las 12 completas
+    <span>PDF · 6 páginas · gratis, sin correo ni registro · pa' imprimir y traer en la troca</span>
   </a>
 
   <div class="kraft">
     <span class="lbl">Cómo usar esta hoja</span>
-    Las marcas del oficio, agrupadas por dimensión. La que ya es tuya, con orgullo. La que te haga dudar — ahí está tu
+    Imprímela y tráela. La marca que ya es tuya, palomeada con orgullo. La que te haga dudar — ahí está tu
     siguiente paso de peón a maistro. Cada una tiene su artículo en el Manual del oficio, dentro de la app.
   </div>
 
