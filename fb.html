@@ -5,9 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>Loom Framing</title>
-<link rel="canonical" href="https://loomframing.com/">
+<script>
+/* Conserva lo que venga (fbclid, ttclid, utm_content=clipNN) y estampa la fuente
+   del puente solo si no viene una propia. Va ANTES del meta a proposito: el meta
+   redirige a URL fija y a 0s le gana la carrera si queda arriba. */
+(function(){
+  var p = new URLSearchParams(location.search);
+  if (!p.has('utm_source')) {
+    p.set('utm_source','facebook'); p.set('utm_medium','bio'); p.set('utm_campaign','perfil');
+  }
+  location.replace('/?' + p.toString() + location.hash);
+})();
+</script>
 <meta http-equiv="refresh" content="0;url=/?utm_source=facebook&amp;utm_medium=bio&amp;utm_campaign=perfil">
-<script>location.replace('/?utm_source=facebook&utm_medium=bio&utm_campaign=perfil');</script>
+<link rel="canonical" href="https://loomframing.com/">
 <style>
   :root{--slate-900:#14110d;--line:#3a332a;--cream:#f4ecd7;--cream-dim:#c9c0ad;--orange:#ff6d00;--orange-ink:#14110d}
   *{box-sizing:border-box;margin:0;padding:0}
