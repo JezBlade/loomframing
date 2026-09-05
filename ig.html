@@ -8,7 +8,19 @@
 <script>
 /* Conserva lo que venga (fbclid, ttclid, utm_content=clipNN) y estampa la fuente
    del puente solo si no viene una propia. Va ANTES del meta a proposito: el meta
-   redirige a URL fija y a 0s le gana la carrera si queda arriba. */
+   redirige a URL fija y a 0s le gana la carrera si queda arriba.
+
+   NO "ARREGLAR" EL GUARD POR CAMPO. Es todo-o-nada A PROPOSITO: o toda la terna
+   del link, o toda la del puente, nunca mezcladas. Completar campo por campo le
+   pondria utm_medium=bio a una utm_source=newsletter, o sea GA4 leeria "newsletter
+   que llego por el bio de este puente" -- etiqueta COMPLETA y FALSA, que contamina
+   el reporte sin que nadie la cache. Preferimos incompleta y verdadera
+   (newsletter / (not set)). Si un link de puerta trae utm_source propia, debe
+   traer las TRES: es requisito del etiquetado S8, no un descuido de este stub.
+
+   Y el <meta> de abajo mas el boton del body SI pierden el query: sin JS no hay
+   como leer location.search, y GH Pages no emite 301 real. Es limitacion de la
+   plataforma, no deuda -- solo cerraria migrando a CDN/Cloudflare. */
 (function(){
   var p = new URLSearchParams(location.search);
   if (!p.has('utm_source')) {
