@@ -218,7 +218,7 @@
 <script>
 (function() {
   var params = new URLSearchParams(window.location.search);
-  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
   var captured = {};
   var hasUtm = false;
   utmKeys.forEach(function(key) {
@@ -230,10 +230,12 @@
     var clean = new URLSearchParams(window.location.search);
     utmKeys.forEach(function(key) { clean.delete(key); });
     var newUrl = window.location.pathname + (clean.toString() ? '?' + clean.toString() : '') + window.location.hash;
-    // La limpieza va DENTRO de event_callback. gtag.js carga async: el page_view del
-    // 'config' se arma cuando la libreria aterriza, no cuando se encola. Limpiar sincrono
-    // hacia que GA4 leyera la URL ya pelada y perdiera source/medium/campaign de sesion.
-    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)', event_callback: function() { if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); } }, event_timeout: 2000 });
+    // La limpieza va DENTRO de event_callback a proposito. gtag.js carga async: el
+    // page_view del 'config' se arma cuando la libreria aterriza, no cuando se encola.
+    // Si limpiaramos sincrono, GA4 leeria la URL ya pelada y perderia la atribucion
+    // nativa (source/medium/campaign). Asi el orden queda garantizado POR CONSTRUCCION.
+    // event_timeout: si gtag.js nunca carga (bloqueador), limpia igual a los 2s.
+    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)', utm_content: captured.utm_content || '(none)', event_callback: function() { if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); } }, event_timeout: 2000 });
   }
 })();
 </script>
