@@ -201,5 +201,31 @@
   <p>Hecha por un framero en Idaho. Más lecciones del oficio en el <a href="/blog/">blog</a>,
   y la app en <a href="/">loomframing.com</a>.</p>
 </footer>
+<!-- UTM handler (espeja el del blog: captura las 4 UTM, dispara utm_landing, limpia la URL) -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  var captured = {};
+  var hasUtm = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { captured[key] = val; hasUtm = true; try { sessionStorage.setItem(key, val); } catch(e) {} }
+    else { try { var stored = sessionStorage.getItem(key); if (stored) captured[key] = stored; } catch(e) {} }
+  });
+  if (hasUtm && typeof gtag === 'function') {
+    var clean = new URLSearchParams(window.location.search);
+    utmKeys.forEach(function(key) { clean.delete(key); });
+    var newUrl = window.location.pathname + (clean.toString() ? '?' + clean.toString() : '') + window.location.hash;
+    // La limpieza va DENTRO de event_callback a proposito. gtag.js carga async: el
+    // page_view del 'config' se arma cuando la libreria aterriza, no cuando se encola.
+    // Si limpiaramos sincrono, GA4 leeria la URL ya pelada y perderia la atribucion
+    // nativa (source/medium/campaign). Asi el orden queda garantizado POR CONSTRUCCION.
+    // event_timeout: si gtag.js nunca carga (bloqueador), limpia igual a los 2s.
+    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)', utm_content: captured.utm_content || '(none)', event_callback: function() { if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); } }, event_timeout: 2000 });
+  }
+})();
+</script>
+
 </body>
 </html>
