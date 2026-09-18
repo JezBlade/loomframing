@@ -319,7 +319,7 @@
 <script>
 (function() {
   var params = new URLSearchParams(window.location.search);
-  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign'];
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
   var captured = {};
   var hasUtm = false;
 
@@ -345,6 +345,7 @@
       utm_source: captured.utm_source || '(none)',
       utm_medium: captured.utm_medium || '(none)',
       utm_campaign: captured.utm_campaign || '(none)',
+      utm_content: captured.utm_content || '(none)',
       event_callback: function() {
         if (window.history && window.history.replaceState) {
           window.history.replaceState(null, '', newUrl);
