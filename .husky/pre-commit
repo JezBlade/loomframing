@@ -4,6 +4,16 @@
 # Mirrors the GitHub Action in .github/workflows/internal-leak-detector.yml
 # but catches problems before they leave your machine.
 
+# Secret guard (runs first and blocks). core.hooksPath points at .husky, so the guard installed in
+# .git/hooks never ran on its own. --git-common-dir also finds it from a linked worktree.
+SECRET_GUARD="$(git rev-parse --git-common-dir)/hooks/pre-commit"
+if [ -f "$SECRET_GUARD" ]; then
+  sh "$SECRET_GUARD" || exit 1
+else
+  echo "[secret guard] not installed in this clone: run the pre-commit hook installer" >&2
+  exit 1
+fi
+
 STAGED=$(git diff --cached --name-only --diff-filter=ACMR)
 if [ -z "$STAGED" ]; then
   exit 0
