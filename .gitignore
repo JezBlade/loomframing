@@ -16,15 +16,9 @@ dist/
 # borrarlo del HEAD no lo borra del historial.
 # Por eso *.pdf se bloquea COMPLETO por default.
 *.pdf
-<<<<<<< Updated upstream
-# Excepcion: las guias PUBLICADAS si van al repo publico (son el asset que se reparte).
-# El *.pdf de arriba se queda como guardrail contra PDFs internos que se cuelen.
-=======
 # Unica excepcion: las guias que NOSOTROS publicamos a proposito (el asset que se reparte).
 # MANTENER ESTA EXCEPCION ESTRECHA. No ampliarla a !*.pdf, no moverla, no quitar el
-# bloqueo de arriba. Auditado 2026-08-13: en toda la historia del repo el unico PDF
-# commiteado es guias/10-errores-framing.pdf — cero planos de usuarios filtrados.
->>>>>>> Stashed changes
+# bloqueo de arriba. Auditado 2026-09-30: el PDF canon publicado es guias/el-framero-completo.pdf.
 !guias/*.pdf
 
 # Editor/IDE
