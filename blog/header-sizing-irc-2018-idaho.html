@@ -81,6 +81,8 @@
       .cta-card { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.75rem 1.5rem; margin: 2.5rem 0 1rem; text-align: center; }
       .cta-card a { display: inline-block; margin-top: 0; padding: 0.8rem 1.1rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; line-height: 1.5; }
       .cta-card a:hover { background: #cea832; }
+      .cta-card a.play { display: block; width: fit-content; margin: 0.85rem auto 0; background: transparent; color: var(--gold-500); border: 2px solid var(--gold-500); }
+      .cta-card a.play:hover { background: var(--gold-500); color: var(--cafe-800); }
 
       .blog-footer { text-align: center; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); margin-top: 2rem; }
       .blog-footer a { color: var(--cafe-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
@@ -181,12 +183,22 @@
 
     <div class="cta-card">
         <a href="../">¿Cuántos jack studs te pide la tabla para ese mismo header en TU zona de nieve? Verifica tu header con la tabla IRC en la bolsa, no en la cabeza.</a>
+        <a class="play" href="https://play.google.com/store/apps/details?id=com.loomframing.app&amp;referrer=utm_source%3Dloomframing.com%26utm_medium%3Dblog%26utm_campaign%3Dtarjeta-play%26utm_content%3Dheader" target="_blank" rel="noopener" data-play-slug="header">Bájala de Google Play: el header sizing de Loom</a>
     </div>
 </article>
 
 <footer class="blog-footer">
     <a href="./">&larr; Volver al Blog del Framero</a>
 </footer>
+
+<!-- Tarjeta de Play (prueba en 3 artículos, 08-oct): el clic al link directo de Play se mide con su propio evento -->
+<script>
+document.querySelectorAll('a[data-play-slug]').forEach(function(a) {
+  a.addEventListener('click', function() {
+    if (typeof gtag === 'function') { gtag('event', 'click_play_store', { article_slug: a.getAttribute('data-play-slug'), transport_type: 'beacon' }); }
+  });
+});
+</script>
 
 <!-- UTM handler (mirrors landing) -->
 <script>
