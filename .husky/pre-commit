@@ -53,7 +53,7 @@ fi
 if [ "$FAIL" -eq 1 ]; then
   echo ""
   echo "  ──────────────────────────────────────────────────────────────"
-  echo "  Commit blocked. This is the PUBLIC web repo for Loom Framing."
+  echo "  Commit blocked. This is the PUBLIC web repo for FrameCore (antes Loom Framing)."
   echo "  Internal development artifacts belong in the private repo."
   echo "  ──────────────────────────────────────────────────────────────"
   echo ""
