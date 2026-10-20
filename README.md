@@ -1,6 +1,6 @@
-# 🌐 FrameCore (antes Loom Framing) — Sitio Oficial
+# 🌐 FrameCore — Sitio Oficial
 
-Landing oficial de **FrameCore** (antes Loom Framing) — la app del framero, pa' frameros.
+Landing oficial de **FrameCore** — la app del framero, pa' frameros.
 
 🔗 **En vivo:** [loomframing.com](https://loomframing.com)
 
