@@ -43,7 +43,7 @@ Thumbs.db
 process.env.bak
 
 # ===== Internal-only artifacts — never commit to this PUBLIC repo =====
-# This is the public web presence for Loom Framing App ONLY.
+# This is the public web presence for FrameCore ONLY.
 # Internal development artifacts must stay in the separate private repository.
 MISSION.md
 SILENT_BLADE*
