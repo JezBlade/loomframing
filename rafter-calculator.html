@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free rafter calculator: common rafter length, ridge cut, birdsmouth seat and HAP, with the notch check and a 2D diagram. Calculadora en español abajo.">
+    <meta name="author" content="FrameCore">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://loomframing.com/rafter-calculator.html">
+    <meta property="og:title" content="Rafter Calculator: length, birdsmouth and HAP, with the math on every number">
+    <meta property="og:description" content="Pitch, run, board and seat cut in; line length, the cut length with and without the tail, HAP and the birdsmouth notch check out, with a 2D diagram. Calculadora de rafters en español abajo.">
+    <meta property="og:image" content="https://loomframing.com/assets/og-framecore-1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="FrameCore, El núcleo del framing: el ícono de la app, tres studs en oro con el núcleo al centro, sobre fondo oscuro">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://loomframing.com/rafter-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Rafter Calculator: Length, Birdsmouth &amp; HAP | FrameCore</title>
+    <link rel="icon" type="image/png" href="assets/app-icon-512.png">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"FrameCore Rafter Calculator","alternateName":"Calculadora de rafters FrameCore","url":"https://loomframing.com/rafter-calculator.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any (web browser)","inLanguage":["en","es"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Common rafter line length, ridge deduction, birdsmouth seat cut and HAP, with the IRC 2018 R802.7.1.1 notch check and a 2D diagram.","image":"https://loomframing.com/assets/og-framecore-1200x630.png","publisher":{"@type":"Organization","name":"FrameCore","alternateName":"Loom Framing"}}
+    </script>
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBQ9B5CTEK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      (function(){try{var k='lf_interno',q=new URLSearchParams(location.search).get(k);if(q==='1'){localStorage.setItem(k,'1');}else if(q==='0'){localStorage.removeItem(k);}if(localStorage.getItem(k)==='1'){gtag('set',{traffic_type:'internal'});}}catch(e){}})();
+  gtag('config', 'G-EBQ9B5CTEK');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --gold-500: #b8941f; --gold-700: #816710; --gold-100: #f6eccb;
+        --cafe-500: #5a4f3a; --cafe-700: #3d3422; --cafe-800: #2a2418;
+        --cream: #faf9f7; --canvas: #f0ead6; --line: #d9d3c1; --bone: #F8F5F0;
+        --ok: #2e7d32; --ok-soft: #e3f1e4; --bad: #c62828; --bad-soft: #fbe5e4;
+        --el-rafter: #A98E6B; --el-rafter-line: #806949;
+        --el-plate: #6F5230;  --el-plate-line: #4F3A20;
+        --el-stud: #3E6E8E;   --el-stud-line: #2B4E66;
+        --el-header: #C15E37; --el-header-line: #8E3F20;
+        --el-dim: #4B5563;    --el-dim-faint: #B6B0A4;
+        --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+        --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: var(--font-body); background: var(--cream); color: var(--cafe-800); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+      button, input { font: inherit; color: inherit; }
+
+      .top { background: var(--cafe-800); color: var(--cream); padding: 1.6rem 1.25rem 1.8rem; }
+      .top .in { max-width: 760px; margin: 0 auto; }
+      .top .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .top a.back { color: var(--gold-500); text-decoration: none; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+      .lang { display: inline-flex; border: 1px solid #5a4f3a; border-radius: 999px; overflow: hidden; }
+      .lang button { background: transparent; border: 0; padding: 4px 12px; font-family: var(--font-mono); font-size: 12px; color: #c9c0ad; cursor: pointer; }
+      .lang button.on { background: var(--gold-500); color: var(--cafe-800); font-weight: 700; }
+      .top h1 { font-family: var(--font-display); font-size: clamp(2.3rem, 8vw, 3.4rem); font-weight: 800; letter-spacing: 0.02em; line-height: 1; margin-top: 1rem; text-transform: uppercase; }
+      .top .h1-sub { font-family: var(--font-mono); font-size: 13px; color: #c9c0ad; margin-top: 8px; }
+      .top .sub { margin-top: 0.8rem; color: #c9c0ad; max-width: 620px; }
+
+      main { max-width: 760px; margin: 0 auto; padding: 1.25rem 1rem 1rem; }
+      .card { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1rem; margin-top: 1rem; }
+      .card h2 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; }
+
+      .field { margin-top: 0.95rem; }
+      .field:first-of-type { margin-top: 0.6rem; }
+      .field > label, .field > .lbl { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cafe-500); }
+      .field .hint { font-size: 0.8rem; color: var(--cafe-500); margin-top: 2px; }
+      .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+      .chips button { min-width: 3.1rem; padding: 8px 11px; border: 1.5px solid var(--line); background: var(--bone); border-radius: 10px; font-family: var(--font-mono); font-size: 14px; font-weight: 700; cursor: pointer; }
+      .chips button.on { background: var(--cafe-800); border-color: var(--cafe-800); color: var(--cream); }
+      .chips button small { display: block; font-family: var(--font-body); font-size: 10.5px; font-weight: 500; opacity: 0.8; }
+      .inrow { display: flex; gap: 8px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+      .inrow input { width: 6.4rem; padding: 9px 10px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--bone); font-family: var(--font-mono); font-size: 15px; font-weight: 700; }
+      .inrow input:focus, .chips button:focus-visible, .lang button:focus-visible { outline: 3px solid var(--gold-500); outline-offset: 1px; }
+      .inrow span { font-family: var(--font-mono); font-size: 13px; color: var(--cafe-500); }
+      .err { color: var(--bad); font-size: 0.8rem; margin-top: 4px; min-height: 0; }
+
+      .hero { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.1rem 1rem; margin-top: 1rem; }
+      .hero .k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-500); }
+      .hero .big { font-family: var(--font-mono); font-size: clamp(2rem, 9vw, 2.6rem); font-weight: 700; line-height: 1.1; margin-top: 2px; }
+      .hero .s { font-family: var(--font-mono); font-size: 12px; color: #c9c0ad; }
+      .hero .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid #3d3422; }
+      .hero .pair .v { font-family: var(--font-mono); font-size: 1.35rem; font-weight: 700; }
+
+      .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 1rem; }
+      .m { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 0.7rem 0.8rem; }
+      .m .k { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cafe-500); }
+      .m .v { font-family: var(--font-mono); font-size: 1.3rem; font-weight: 700; color: var(--cafe-800); }
+      .m .s { font-family: var(--font-mono); font-size: 11px; color: var(--cafe-500); }
+
+      .comp { border-radius: 12px; padding: 0.9rem 0.95rem; margin-top: 1rem; border: 1.5px solid; }
+      .comp.ok { background: var(--ok-soft); border-color: var(--ok); }
+      .comp.bad { background: var(--bad-soft); border-color: var(--bad); }
+      .comp .t { font-weight: 700; display: flex; gap: 8px; align-items: center; }
+      .comp.ok .t { color: var(--ok); } .comp.bad .t { color: var(--bad); }
+      .comp .d { font-family: var(--font-mono); font-size: 12px; margin-top: 4px; color: var(--cafe-700); }
+      .comp .f { font-size: 0.9rem; margin-top: 6px; color: var(--cafe-800); }
+      .comp.ok .f { display: none; }
+      .advice { display: none; background: var(--gold-100); border: 1px solid #e3cf8a; border-radius: 12px; padding: 0.85rem 0.95rem; margin-top: 0.7rem; }
+      .advice.show { display: block; }
+      .advice .t { font-weight: 700; color: var(--gold-700); }
+      .advice .b { font-size: 0.92rem; margin-top: 2px; }
+      .advice .fm { font-family: var(--font-mono); font-size: 11.5px; color: var(--gold-700); margin-top: 4px; }
+
+      .diagram { background: var(--bone); border: 1px solid var(--line); border-radius: 14px; margin-top: 1rem; padding: 0.7rem 0.4rem 0.4rem; }
+      .diagram .k { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cafe-500); padding: 0 0.5rem; }
+      .diagram svg { display: block; width: 100%; height: auto; max-height: 300px; }
+
+      .math { margin-top: 1rem; }
+      .math h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; }
+      .math ol { list-style: none; margin-top: 0.4rem; }
+      .math li { font-family: var(--font-mono); font-size: 12.5px; padding: 6px 0; border-top: 1px dashed var(--line); color: var(--cafe-700); }
+      .math li b { font-family: var(--font-body); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cafe-500); display: block; }
+
+      .prose { margin-top: 2rem; }
+      .prose h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; letter-spacing: 0.02em; padding-bottom: 0.4rem; border-bottom: 3px solid var(--gold-500); text-transform: uppercase; }
+      .prose p, .prose li { margin-top: 0.75rem; }
+      .prose ul { padding-left: 1.1rem; }
+      .prose .note { background: var(--canvas); border-left: 4px solid var(--gold-500); border-radius: 8px; padding: 0.85rem 1rem; margin-top: 1rem; }
+      .prose button.go { margin-top: 1rem; background: var(--cafe-800); color: var(--cream); border: 0; border-radius: 10px; padding: 0.75rem 1rem; font-weight: 700; cursor: pointer; }
+
+      .cta-card { background: var(--cafe-800); color: var(--cream); border-radius: 14px; padding: 1.5rem 1.25rem; margin: 2rem 0 1rem; text-align: center; }
+      .cta-card p { color: #e9e3d3; }
+      .cta-card a.play { display: inline-block; margin-top: 0.9rem; padding: 0.8rem 1.1rem; background: var(--gold-500); color: var(--cafe-800); border-radius: 8px; text-decoration: none; font-weight: 700; }
+      .cta-card a.play:hover { background: #cea832; }
+
+      .foot { text-align: center; padding: 2rem 1.25rem 3rem; border-top: 1px solid var(--line); margin-top: 1.5rem; }
+      .foot a { color: var(--cafe-500); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0.6rem; }
+      .foot p { font-size: 0.85rem; color: var(--cafe-500); margin-top: 0.6rem; }
+
+      @media (min-width: 640px) {
+        .grid { grid-template-columns: repeat(4, 1fr); }
+        main { padding: 1.5rem 1.25rem 1rem; }
+      }
+    </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="in">
+    <div class="bar">
+      <a class="back" href="./">&larr; FrameCore</a>
+      <div class="lang" role="group" aria-label="Language / Idioma">
+        <button type="button" data-lang="en" class="on">EN</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
+    </div>
+    <h1 data-i18n="h1">Rafter Calculator</h1>
+    <p class="h1-sub" lang="es" data-i18n="h1sub">Calculadora de rafters · en español abajo</p>
+    <p class="sub" data-i18n="sub">Common rafter length, ridge cut, birdsmouth seat and HAP, with the notch check and the math on every number.</p>
+  </div>
+</header>
+
+<main id="calc">
+  <section class="card" aria-labelledby="inTitle">
+    <h2 id="inTitle" data-i18n="inTitle">Your roof</h2>
+
+    <div class="field">
+      <span class="lbl" data-i18n="pitch">Pitch (rise per 12)</span>
+      <div class="chips" id="pitch">
+        <button type="button" data-rise="4">4/12</button>
+        <button type="button" data-rise="5">5/12</button>
+        <button type="button" data-rise="6" class="on">6/12</button>
+        <button type="button" data-rise="8">8/12</button>
+        <button type="button" data-rise="10">10/12</button>
+        <button type="button" data-rise="12">12/12</button>
+      </div>
+      <div class="inrow"><input id="riseIn" inputmode="decimal" aria-label="Rise per 12" value="6"><span>/ 12</span></div>
+      <div class="err" id="riseErr"></div>
+    </div>
+
+    <div class="field">
+      <label for="runFt" data-i18n="run">Run</label>
+      <div class="hint" data-i18n="runHint">Outside of the wall to the center of the ridge (half the span).</div>
+      <div class="inrow">
+        <input id="runFt" inputmode="numeric" value="12" aria-label="Run feet"><span>ft</span>
+        <input id="runIn" inputmode="decimal" value="0" aria-label="Run inches"><span data-i18n="inHint">in (6 1/2 ok)</span>
+      </div>
+      <div class="err" id="runErr"></div>
+    </div>
+
+    <div class="field">
+      <span class="lbl" data-i18n="board">Rafter board</span>
+      <div class="chips" id="board">
+        <button type="button" data-depth="5.5">2×6</button>
+        <button type="button" data-depth="7.25" class="on">2×8</button>
+        <button type="button" data-depth="9.25">2×10</button>
+        <button type="button" data-depth="11.25">2×12</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="lbl" data-i18n="seat">Seat cut (birdsmouth)</span>
+      <div class="chips" id="seat">
+        <button type="button" data-seat="3.5" class="on">3½″<small data-i18n="wall4">2×4 wall</small></button>
+        <button type="button" data-seat="5.5">5½″<small data-i18n="wall6">2×6 wall</small></button>
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="lbl" data-i18n="over">Overhang (level, past the wall)</span>
+      <div class="chips" id="over">
+        <button type="button" data-over="0"><span data-i18n="flush">Flush</span></button>
+        <button type="button" data-over="12">12″</button>
+        <button type="button" data-over="16" class="on">16″</button>
+        <button type="button" data-over="24">24″</button>
+      </div>
+      <div class="inrow"><input id="overIn" inputmode="decimal" value="16" aria-label="Overhang inches"><span data-i18n="inches">in</span></div>
+      <div class="err" id="overErr"></div>
+    </div>
+
+    <div class="field">
+      <span class="lbl" data-i18n="ridge">Ridge board thickness</span>
+      <div class="chips" id="ridge">
+        <button type="button" data-ridge="1.5" class="on">1½″</button>
+        <button type="button" data-ridge="1.75">1¾″</button>
+      </div>
+    </div>
+  </section>
+
+  <section aria-live="polite" aria-labelledby="outTitle">
+    <h2 id="outTitle" class="sr" style="position:absolute;left:-9999px" data-i18n="outTitle">Results</h2>
+    <div class="hero">
+      <div class="k" data-i18n="lineK">Common rafter · line length to ridge center</div>
+      <div class="big" id="heroMain">—</div>
+      <div class="s" id="heroSub"></div>
+      <div class="pair">
+        <div><div class="k" data-i18n="shortK">Ridge cut to the wall line</div><div class="v" id="heroShort">—</div><div class="s" id="heroShortSub"></div></div>
+        <div><div class="k" data-i18n="totalK">Ridge cut to the tail cut</div><div class="v" id="heroTotal">—</div><div class="s" id="heroTotalSub"></div></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="m"><div class="k" data-i18n="plumbK">Plumb cut</div><div class="v" id="mPlumb">—</div><div class="s" data-i18n="plumbS">ridge &amp; tail</div></div>
+      <div class="m"><div class="k" data-i18n="seatK">Seat cut angle</div><div class="v" id="mSeat">—</div><div class="s" data-i18n="seatS">level cut</div></div>
+      <div class="m"><div class="k">HAP</div><div class="v" id="mHap">—</div><div class="s" data-i18n="hapS">mark on the wall</div></div>
+      <div class="m"><div class="k" data-i18n="heelK">Heel</div><div class="v" id="mHeel">—</div><div class="s" id="mHeelS"></div></div>
+    </div>
+
+    <div class="comp" id="comp">
+      <div class="t" id="compTitle">—</div>
+      <div class="d" id="compDetail"></div>
+      <div class="f" id="compFix"></div>
+    </div>
+    <div class="advice" id="advice">
+      <div class="t" data-i18n="adviceT">House tip (not code)</div>
+      <div class="b" id="adviceBody"></div>
+      <div class="fm" id="adviceFm"></div>
+    </div>
+
+    <div class="diagram">
+      <div class="k" data-i18n="diagK">The rafter, 2D (broken to fit)</div>
+      <div id="stage"></div>
+    </div>
+
+    <div class="card math">
+      <h3 data-i18n="mathT">The math, number by number</h3>
+      <ol>
+        <li><b data-i18n="mSlope">Angle</b><span id="fSlope"></span></li>
+        <li><b data-i18n="mFactor">Factor (line per foot of run)</b><span id="fFactor"></span></li>
+        <li><b data-i18n="mLine">Line length</b><span id="fLine"></span></li>
+        <li><b data-i18n="mRidge">Half the ridge, on the rafter</b><span id="fRidge"></span></li>
+        <li><b data-i18n="mTail">Tail on the rafter</b><span id="fTail"></span></li>
+        <li><b data-i18n="mCut">Ridge cut to the tail cut</b><span id="fCut"></span></li>
+        <li><b>HAP</b><span id="fHap"></span></li>
+        <li><b data-i18n="mRem">Left of the depth above the notch</b><span id="fRem"></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="prose" lang="en">
+    <h2>How to use it</h2>
+    <p>Pick the pitch, enter the run (outside of the wall to the center of the ridge, half the span), then the rafter board, the seat cut (3½″ on a 2×4 wall, 5½″ on a 2×6), the overhang and the ridge board thickness. Fractions are fine: <span style="font-family:var(--font-mono)">6 1/2</span> or <span style="font-family:var(--font-mono)">6-1/2</span>.</p>
+    <ul>
+      <li><strong>Line length</strong> runs along the rafter from the wall line (plumb over the outside of the wall) to the center of the ridge. The plumb cut at the ridge comes back half the ridge board, so <strong>ridge cut to the wall line</strong> is the line length minus that, and <strong>ridge cut to the tail cut</strong> adds the overhang on the rafter. That last one is the length you cut the board to.</li>
+      <li><strong>HAP</strong> (height above plate) is the number you mark on the wall, measured plumb.</li>
+      <li>The <strong>notch check</strong> follows IRC 2018: with an overhang, at least 3½″ of the rafter has to stay above the birdsmouth, measured square to the edge, and the overhang stays at 24″ or less (R802.7.1.1). Flush, the end notch can't pass ¼ of the depth (R802.7.1).</li>
+    </ul>
+    <div class="note"><strong>Why square and not plumb?</strong> Measured plumb, the leftover wood always reads bigger, so it can pass a notch the code figure fails. The HAP stays a framing number; the check uses what is left measured square to the edge.</div>
+    <div class="note"><strong>What it does not do:</strong> size the rafter for span, load or snow. That comes from the rafter span tables (IRC 2018 R802.4.1) or the engineer. Check which code edition your jurisdiction uses.</div>
+  </section>
+
+  <section class="prose" lang="es" id="es">
+    <h2>En español</h2>
+    <p>Pa' los que cortan rafters a mano. Le metes el pitch, el run, la tabla y el asiento, y te da el largo del rafter al centro del ridge, el largo del corte del ridge a la línea de la pared (ya con el medio ridge descontado) y al corte de la cola, que es con el que cortas la tabla, el HAP pa' marcar en la pared y el check de la muesca del birdsmouth. Cada número trae su cuenta abajo, pa' que la revises antes de cortar.</p>
+    <ul>
+      <li><strong>El run</strong> va de la cara de afuera de la pared al centro del ridge: la mitad del claro.</li>
+      <li><strong>El HAP</strong> es el que se marca en la pared, a plomo. Pa'l código no se usa ése: se usa lo que queda del canto medido perpendicular, porque a plomo sale más grande y te puede engañar.</li>
+      <li><strong>La muesca</strong> se revisa contra el IRC 2018: con overhang, del canto tienen que quedar 3½″ o más, medidos perpendicular, y el overhang no pasa de 24″ (R802.7.1.1). A ras, la muesca del extremo no pasa de ¼ del depth (R802.7.1).</li>
+    </ul>
+    <div class="note"><strong>Lo que no hace:</strong> dimensionar el rafter por claro, carga o nieve. Eso sale de las tablas de rafters (R802.4.1) o del ingeniero. Y checa qué edición del código usa tu ciudad.</div>
+    <button type="button" class="go" id="toEs">Usar la calculadora en español &uarr;</button>
+  </section>
+
+  <div class="cta-card">
+    <p data-i18n="ctaP">Hips, valleys and jacks, a cut list that shows where every line comes from and a step-by-step cut sheet, on your phone and off-line on the jobsite.</p>
+    <a class="play" href="https://play.google.com/store/apps/details?id=com.loomframing.app&amp;referrer=utm_source%3Dloomframing.com%26utm_medium%3Dtool%26utm_campaign%3Dweb-rafter%26utm_content%3Drafter-calculator" target="_blank" rel="noopener" data-play-slug="rafter-calculator" data-i18n="ctaA">Get FrameCore on Google Play · free download</a>
+  </div>
+</main>
+
+<footer class="foot">
+  <a href="./" data-i18n="fHome">FrameCore</a><a href="blog/" data-i18n="fBlog">Blog</a>
+  <p data-i18n="fNote">Made by a framer in Idaho, for framers everywhere.</p>
+</footer>
+
+<script>
+/* ===========================================================
+   Motor del rafter: compute() y el dibujo 2D. Recibe el estado
+   en vez de leer el DOM. Tipo: common.
+   =========================================================== */
+(function () {
+  'use strict';
+  const TYPES = { common: { label:'Common', unit:12 } };
+
+  function frac16(x) {
+    const neg = x < 0; x = Math.abs(x);
+    let whole = Math.floor(x + 1e-9);
+    let f = Math.round((x - whole) * 16);
+    if (f === 16) { whole++; f = 0; }
+    let s;
+    if (f === 0) s = whole + '″';
+    else { let n = f, d = 16; while (n % 2 === 0 && d % 2 === 0) { n /= 2; d /= 2; } s = (whole > 0 ? whole + '-' : '') + n + '/' + d + '″'; }
+    return (neg ? '-' : '') + s;
+  }
+  function ftIn(x) { if (x < 12) return frac16(x); const ft = Math.floor(x / 12); return ft + '′ ' + frac16(x - ft * 12); }
+  const deg = r => (r * 180 / Math.PI);
+  const fix = (n, d) => n.toFixed(d);
+
+  function compute(S) {
+    const t = TYPES[S.type];
+    const theta = Math.atan(S.rise / 12);
+    const thetaDeg = deg(theta);
+    const factor = Math.sqrt(S.rise * S.rise + t.unit * t.unit) / 12;
+    const lineLen = S.run * factor;
+    const overRafter = S.overhang * factor;
+    const total = lineLen + overRafter;
+    const cosT = Math.cos(theta), sinT = Math.sin(theta), tanT = Math.tan(theta);
+    const plumbDepth = S.depth / cosT;
+    const heel = S.seat * tanT;
+    const hap = plumbDepth - heel;
+    const endNotch = S.seat * sinT;
+    const ridgeDeduct = (S.ridge / 2) * factor;
+    const shortPoint = lineLen - ridgeDeduct;
+    const remaining = S.depth - endNotch;
+    let rule, compliant, okRem = true, okOv = true;
+    if (S.overhang > 0) {
+      rule = 'R802.7.1.1';
+      okRem = remaining >= 3.5 - 1e-6; okOv = S.overhang <= 24 + 1e-6;
+      compliant = okRem && okOv;
+    } else {
+      rule = 'R802.7.1';
+      compliant = endNotch <= S.depth / 4 + 1e-6;
+    }
+    const notchRatio = endNotch / S.depth;
+    const advice = notchRatio > 1 / 3 + 1e-9;
+    const advicePct = Math.round(notchRatio * 100);
+    return { t, theta, thetaDeg, factor, lineLen, overRafter, total, plumbDepth, heel, hap, endNotch, remaining,
+             ridgeDeduct, shortPoint, rule, compliant, okRem, okOv, cosT, sinT, tanT, notchRatio, advice, advicePct };
+  }
+
+  /* ---- 2D: rafter completo con quiebre (buildEle del DS) ---- */
+  const COL = { rafter:'#A98E6B', rafterL:'#806949', plate:'#6F5230', plateL:'#4F3A20', stud:'#3E6E8E', studL:'#2B4E66',
+                ridge:'#C15E37', ridgeL:'#8E3F20', dim:'#4B5563', dimF:'#B6B0A4' };
+  let pts = [];
+  const f1 = x => (Math.round(x * 10) / 10).toString();
+  const ele = (u, v, s) => { const q = [u * s, -v * s]; pts.push(q); return q; };
+  function poly(p, fill, stroke, sw, extra) {
+    return '<polygon points="' + p.map(q => f1(q[0]) + ',' + f1(q[1])).join(' ') + '" fill="' + fill + '" stroke="' + (stroke || 'none') +
+      '" stroke-width="' + (sw || 0) + '" stroke-linejoin="round" ' + (extra || '') + '/>';
+  }
+  function line(a, b, stroke, sw, dash) {
+    return '<line x1="' + f1(a[0]) + '" y1="' + f1(a[1]) + '" x2="' + f1(b[0]) + '" y2="' + f1(b[1]) + '" stroke="' + stroke + '" stroke-width="' + sw + '" ' +
+      (dash ? 'stroke-dasharray="' + dash + '" ' : '') + 'stroke-linecap="round"/>';
+  }
+  function cota(x, y, txt, rot, color, size, anchor) {
+    return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + (color || COL.dim) + '" font-family="JetBrains Mono, ui-monospace, monospace" font-size="' + (size || 10.5) +
+      '" font-weight="700" text-anchor="' + (anchor || 'middle') + '" ' + (rot ? 'transform="rotate(' + rot + ' ' + f1(x) + ' ' + f1(y) + ')"' : '') + '>' + txt + '</text>';
+  }
+  function geom(S) {
+    const s = S.rise / 12, theta = Math.atan(s), PD = S.depth / Math.cos(theta);
+    const bot = x => s * (x - S.seat);
+    const top = x => bot(x) + PD;
+    return { s, theta, PD, bot, top, OV: S.overhang, SEAT: S.seat, RUN: S.run, RIDGE: S.ridge };
+  }
+  function buildEle(S, scale, L) {
+    pts = [];
+    const g = geom(S), s = scale, c = compute(S);
+    let out = '';
+    const L1 = g.SEAT + 11, GAP = 9, x0 = g.RUN - 11;
+    const xShift = x0 - (L1 + GAP);
+    const Rx = x => x - xShift, Ry = x => g.s * xShift;
+    const E = (x, v) => ele(x, v, s);
+    const ER = (x, v) => ele(Rx(x), v - Ry(x), s);
+    const zig = (x, yT, yB, dir) => [[x, yT], [x + 1.4 * dir, yT - (yT - yB) * .25], [x - 1.4 * dir, yT - (yT - yB) * .5], [x + 1.4 * dir, yT - (yT - yB) * .75], [x, yB]];
+    out += poly([E(-2, 0), E(g.SEAT, 0), E(g.SEAT, -3), E(-2, -3)], COL.plate, COL.plateL, 1.5);
+    out += poly([E(-0.2, -3), E(1.3, -3), E(1.3, -10), E(-0.2, -10)], COL.stud, COL.studL, 1.3, 'fill-opacity="0.95"');
+    const left = [[-g.OV, g.top(-g.OV)], [L1, g.top(L1)], ...zig(L1, g.top(L1), g.bot(L1), 1).slice(1, -1), [L1, g.bot(L1)],
+                  [g.SEAT, 0], [0, 0], [0, g.bot(0)], [-g.OV, g.bot(-g.OV)]];
+    if (g.OV === 0) { left.splice(0, 1, [0, g.top(0)]); left.splice(-1, 1); }
+    out += poly(left.map(q => E(q[0], q[1])), COL.rafter, COL.rafterL, 1.8);
+    const xr = g.RUN - g.RIDGE / 2;
+    const right = [[x0, g.top(x0)], [xr, g.top(xr)], [xr, g.bot(xr)], [x0, g.bot(x0)], ...zig(x0, g.bot(x0), g.top(x0), -1).slice(1, -1)];
+    out += poly(right.map(q => ER(q[0], q[1])), COL.rafter, COL.rafterL, 1.8);
+    out += poly([ER(xr, g.top(xr) + 1.5), ER(xr + g.RIDGE, g.top(xr) + 1.5), ER(xr + g.RIDGE, g.bot(xr) - 1), ER(xr, g.bot(xr) - 1)], COL.ridge, COL.ridgeL, 1.5);
+    const d = COL.dim;
+    const hx = E(-g.OV - 5, 0)[0];
+    out += line(E(0, 0), [hx, E(0, 0)[1]], COL.dimF, 1) + line(E(0, g.top(0)), [hx, E(0, g.top(0))[1]], COL.dimF, 1);
+    out += line([hx, E(0, 0)[1]], [hx, E(0, g.top(0))[1]], d, 1.2) + tick([hx, E(0, 0)[1]]) + tick([hx, E(0, g.top(0))[1]]);
+    out += cota(hx - 5, (E(0, 0)[1] + E(0, g.top(0))[1]) / 2, 'HAP ' + frac16(c.hap), -90, d, 10);
+    const sy = E(0, -3)[1] + 12;
+    out += line([E(0, 0)[0], sy], [E(g.SEAT, 0)[0], sy], d, 1.2) + tickV([E(0, 0)[0], sy]) + tickV([E(g.SEAT, 0)[0], sy]);
+    out += cota(E(g.SEAT, 0)[0] + 4, sy + 4, 'seat ' + frac16(g.SEAT) + ' · heel ' + frac16(c.heel), 0, d, 9.5, 'start');
+    if (g.OV > 0) {
+      const oy = E(0, -10)[1] + 8;
+      out += line([E(-g.OV, 0)[0], oy], [E(0, 0)[0], oy], d, 1.2) + tickV([E(-g.OV, 0)[0], oy]) + tickV([E(0, 0)[0], oy]);
+      out += cota((E(-g.OV, 0)[0] + E(0, 0)[0]) / 2, oy + 11, 'overhang ' + frac16(g.OV), 0, d, 10);
+    }
+    out += cota((E(L1, 0)[0] + Rx(x0) * s) / 2, Math.max(E(L1, g.bot(L1))[1], ER(x0, g.bot(x0))[1]) + 16, 'run ' + ftIn(g.RUN) + ' · ' + L.broken, 0, d, 9.5);
+    const tx = x0 + 3;
+    out += line(ER(tx, g.top(tx) + 2), ER(tx + 12, g.top(tx) + 2), COL.dimF, 1.2);
+    out += line(ER(tx + 12, g.top(tx) + 2), ER(tx + 12, g.top(tx) + 2 + g.s * 12), COL.dimF, 1.2);
+    out += cota(ER(tx + 15, g.top(tx) + 2 + g.s * 6)[0], ER(tx + 15, g.top(tx) + 2 + g.s * 6)[1] + 4, S.rise + '/12', 0, d, 9.5, 'start');
+    out += cota(ER(xr - 1, g.top(xr) + 4)[0], ER(xr - 1, g.top(xr) + 4)[1], L.plumbRidge, 0, d, 9, 'end');
+    return out;
+    function tick(q) { return line([q[0] - 4, q[1]], [q[0] + 4, q[1]], d, 1.2); }
+    function tickV(q) { return line([q[0], q[1] - 4], [q[0], q[1] + 4], d, 1.2); }
+  }
+
+  /* exposed pa' las pruebas de paridad */
+  window.FCRafter = { compute, frac16, ftIn, buildEle };
+
+  /* ===========================================================
+     Textos EN / ES (lo de ES con las palabras de la app)
+     =========================================================== */
+  const T = {
+    en: {
+      h1:'Rafter Calculator', h1sub:'Calculadora de rafters · en español abajo',
+      sub:'Common rafter length, ridge cut, birdsmouth seat and HAP, with the notch check and the math on every number.',
+      inTitle:'Your roof', pitch:'Pitch (rise per 12)', run:'Run', runHint:'Outside of the wall to the center of the ridge (half the span).',
+      inHint:'in (6 1/2 ok)', board:'Rafter board', seat:'Seat cut (birdsmouth)', wall4:'2×4 wall', wall6:'2×6 wall',
+      over:'Overhang (level, past the wall)', flush:'Flush', inches:'in', ridge:'Ridge board thickness', outTitle:'Results',
+      lineK:'Common rafter · line length to ridge center', shortK:'Ridge cut to the wall line', totalK:'Ridge cut to the tail cut',
+      plumbK:'Plumb cut', plumbS:'ridge & tail', seatK:'Seat cut angle', seatS:'level cut', hapS:'mark on the wall', heelK:'Heel',
+      adviceT:'House tip (not code)', diagK:'The rafter, 2D (broken to fit)', mathT:'The math, number by number',
+      mSlope:'Angle', mFactor:'Factor (line per foot of run)', mLine:'Line length', mRidge:'Half the ridge, on the rafter',
+      mTail:'Tail on the rafter', mCut:'Ridge cut to the tail cut', mRem:'Left of the depth above the notch',
+      ctaP:'Hips, valleys and jacks, a cut list that shows where every line comes from and a step-by-step cut sheet, on your phone and off-line on the jobsite.',
+      ctaA:'Get FrameCore on Google Play · free download', fHome:'FrameCore', fBlog:'Blog', fNote:'Made by a framer in Idaho, for framers everywhere.',
+      broken:'broken', plumbRidge:'plumb cut · −½ ridge',
+      heroSub:(c)=>fix(c.lineLen/12,3)+' ft · '+fix(c.lineLen,3)+' in',
+      shortSub:(c)=>'− ½ ridge ('+frac16(c.ridgeDeduct)+' on the rafter)', totalSub:(c)=>'+ '+frac16(c.overRafter)+' tail on the rafter',
+      noTail:'flush · no tail, same as the wall line',
+      heelS:(c)=>'notch '+frac16(c.endNotch),
+      okT:(r)=>'IRC 2018 '+r+' · notch OK', badT:(r)=>'IRC 2018 '+r+' · notch does NOT pass',
+      detailOv:(c,S)=>frac16(c.remaining)+' left of the depth '+(c.okRem?'≥':'<')+' 3½″ (square to the edge, Fig. R802.7.1.1) · plumb HAP '+frac16(c.hap)+' · overhang '+frac16(S.overhang)+(c.okOv?' ≤ ':' > ')+'24″',
+      detailFl:(c,S)=>'flush · end notch '+frac16(c.endNotch)+(c.compliant?' ≤ ':' > ')+'D/4 ('+frac16(S.depth/4)+')',
+      fixRem:'Go up a board size or shorten the seat cut: at least 3½″ of the rafter has to stay above the notch, measured square to the edge (the plumb HAP reads bigger and fools you).',
+      fixOv:'Cut the overhang back to 24″ or support it (lookout).',
+      fixFl:'Go up a board size or shorten the seat cut: the end notch is more than ¼ of the depth.',
+      adviceB:(p)=>'The seat cut eats '+p+'% of the rafter depth. Our field rule is to stay under 1/3; the code doesn\'t forbid it. A deeper rafter gives you margin.',
+      adviceF:(c,S)=>'seat '+frac16(S.seat)+' · sinθ = notch '+frac16(c.endNotch)+' ÷ D '+frac16(S.depth)+' = '+c.advicePct+'% · rule ≤ 1/3 · not IRC',
+      errRise:'Use a rise from 1 to 24.', errRun:'Run has to be more than 3 ft.', errOver:'Use 0 to 36 inches.',
+      aria:(S)=>'Rafter '+S.rise+'/12 with birdsmouth'
+    },
+    es: {
+      h1:'Calculadora de rafters', h1sub:'Rafter calculator · también en inglés',
+      sub:'Largo del common rafter, corte al ridge, asiento del birdsmouth y HAP, con el check de la muesca y la cuenta de cada número.',
+      inTitle:'Tu techo', pitch:'Pitch (rise por 12)', run:'Run', runHint:'De la cara de afuera de la pared al centro del ridge (la mitad del claro).',
+      inHint:'in (6 1/2 se vale)', board:'Tabla del rafter', seat:'Asiento (birdsmouth)', wall4:'pared 2×4', wall6:'pared 2×6',
+      over:'Overhang (a nivel, fuera de la pared)', flush:'A ras', inches:'in', ridge:'Grueso del ridge', outTitle:'Resultados',
+      lineK:'Common rafter · largo al centro del ridge', shortK:'Del corte del ridge a la línea de la pared', totalK:'Del corte del ridge al corte de la cola',
+      plumbK:'Corte a plomo', plumbS:'ridge y cola', seatK:'Ángulo del asiento', seatS:'corte a nivel', hapS:'se marca en la pared', heelK:'Heel',
+      adviceT:'Consejo de la casa (no es código)', diagK:'El rafter en 2D (quebrado pa\' que quepa)', mathT:'La cuenta, número por número',
+      mSlope:'Ángulo', mFactor:'Factor (línea por pie de run)', mLine:'Largo de línea', mRidge:'Medio ridge, sobre el rafter',
+      mTail:'Cola sobre el rafter', mCut:'Del corte del ridge al corte de la cola', mRem:'Lo que queda del canto sobre la muesca',
+      ctaP:'Hips, valleys y jacks, la cut list con el origen de cada renglón y la hoja de corte paso a paso, en tu teléfono y off-line en la obra.',
+      ctaA:'Bájala de Google Play: FrameCore, la descarga es gratis', fHome:'FrameCore', fBlog:'Blog', fNote:'Hecha por un framero en Idaho, pa\' los frameros de donde sea.',
+      broken:'quebrado', plumbRidge:'corte a plomo · −½ ridge',
+      heroSub:(c)=>fix(c.lineLen/12,3)+' ft · '+fix(c.lineLen,3)+' in',
+      shortSub:(c)=>'− ½ ridge ('+frac16(c.ridgeDeduct)+' sobre el rafter)', totalSub:(c)=>'+ '+frac16(c.overRafter)+' de cola sobre el rafter',
+      noTail:'a ras · sin cola, igual que a la pared',
+      heelS:(c)=>'muesca '+frac16(c.endNotch),
+      okT:(r)=>'IRC 2018 '+r+' · la muesca cumple', badT:(r)=>'IRC 2018 '+r+' · la muesca NO cumple',
+      detailOv:(c,S)=>'queda '+frac16(c.remaining)+' del canto'+(c.okRem?' ≥ ':' < ')+'3½″ (perpendicular, Fig. R802.7.1.1) · HAP a plomo '+frac16(c.hap)+' · overhang '+frac16(S.overhang)+(c.okOv?' ≤ ':' > ')+'24″',
+      detailFl:(c,S)=>'a ras · muesca '+frac16(c.endNotch)+(c.compliant?' ≤ ':' > ')+'D/4 ('+frac16(S.depth/4)+')',
+      fixRem:'Sube de board o baja el seat: del canto tienen que quedar 3½″ o más, medidos perpendicular (el HAP a plomo engaña: sale más grande).',
+      fixOv:'Recorta el overhang a 24″ o métele un soporte (lookout).',
+      fixFl:'Sube de board o baja el seat: la muesca del extremo pasa de ¼ del depth.',
+      adviceB:(p)=>'El asiento se come el '+p+'% del canto. Nuestra guía de obra es no pasar de 1/3; el código no lo prohíbe. Con un rafter más alto te sobra margen.',
+      adviceF:(c,S)=>'seat '+frac16(S.seat)+' · sinθ = muesca '+frac16(c.endNotch)+' ÷ D '+frac16(S.depth)+' = '+c.advicePct+'% · guía ≤ 1/3 · no es IRC',
+      errRise:'Ponle un rise de 1 a 24.', errRun:'El run tiene que pasar de 3 pies.', errOver:'De 0 a 36 pulgadas.',
+      aria:(S)=>'Rafter '+S.rise+'/12 con birdsmouth'
+    }
+  };
+
+  /* ===========================================================
+     Estado, entrada y pintado
+     =========================================================== */
+  const S = { type:'common', rise:6, depth:7.25, run:144, overhang:16, seat:3.5, ridge:1.5 };
+  let lang = 'en';
+  const $ = id => document.getElementById(id);
+
+  // acepta 6, 6.5, 6 1/2, 6-1/2, 1/2
+  function parseIn(txt) {
+    const t = String(txt).trim().replace(/[″"]/g, '').replace(/\s+/g, ' ');
+    if (t === '') return 0;
+    let m;
+    if ((m = t.match(/^(\d+(?:\.\d+)?)$/))) return parseFloat(m[1]);
+    if ((m = t.match(/^(\d+)[ -](\d+)\/(\d+)$/))) return (+m[3] ? +m[1] + (+m[2]) / (+m[3]) : NaN);
+    if ((m = t.match(/^(\d+)\/(\d+)$/))) return (+m[2] ? (+m[1]) / (+m[2]) : NaN);
+    return NaN;
+  }
+
+  let used = false;
+  function track() {
+    if (used) return; used = true;
+    try { if (typeof gtag === 'function') gtag('event', 'rafter_calc_used', { lang: lang }); } catch (e) {}
+  }
+
+  function setOn(group, val, attr) {
+    document.querySelectorAll('#' + group + ' button').forEach(b => b.classList.toggle('on', parseFloat(b.dataset[attr]) === val));
+  }
+
+  function render() {
+    const L = T[lang];
+    const c = compute(S);
+    $('heroMain').textContent = ftIn(c.lineLen);
+    $('heroSub').textContent = L.heroSub(c);
+    $('heroShort').textContent = ftIn(c.shortPoint);
+    $('heroShortSub').textContent = L.shortSub(c);
+    const cut = c.shortPoint + c.overRafter;   // corte con cola: (run − ½ ridge + cola) × factor
+    $('heroTotal').textContent = ftIn(cut);
+    $('heroTotalSub').textContent = S.overhang > 0 ? L.totalSub(c) : L.noTail;
+    $('mPlumb').textContent = fix(c.thetaDeg, 1) + '°';
+    $('mSeat').textContent = fix(90 - c.thetaDeg, 1) + '°';
+    $('mHap').textContent = frac16(c.hap);
+    $('mHeel').textContent = frac16(c.heel);
+    $('mHeelS').textContent = L.heelS(c);
+
+    const comp = $('comp');
+    comp.classList.toggle('ok', c.compliant); comp.classList.toggle('bad', !c.compliant);
+    $('compTitle').textContent = (c.compliant ? '✓ ' : '✕ ') + (c.compliant ? L.okT(c.rule) : L.badT(c.rule));
+    const board = { '5.5':'2×6', '7.25':'2×8', '9.25':'2×10', '11.25':'2×12' }[String(S.depth)];
+    $('compDetail').textContent = board + ' · seat ' + frac16(S.seat) + ' · ' + (S.overhang > 0 ? L.detailOv(c, S) : L.detailFl(c, S));
+    $('compFix').textContent = c.compliant ? '' : (S.overhang > 0 ? (!c.okRem ? L.fixRem : L.fixOv) : L.fixFl);
+
+    $('advice').classList.toggle('show', c.advice);
+    $('adviceBody').textContent = L.adviceB(c.advicePct);
+    $('adviceFm').textContent = L.adviceF(c, S);
+
+    $('fSlope').textContent = 'atan(' + S.rise + ' ÷ 12) = ' + fix(c.thetaDeg, 1) + '°';
+    $('fFactor').textContent = '√(' + S.rise + '² + 12²) ÷ 12 = ' + fix(c.factor, 4);
+    $('fLine').textContent = fix(S.run, 3).replace(/\.?0+$/, '') + '″ × ' + fix(c.factor, 4) + ' = ' + fix(c.lineLen, 3) + '″ = ' + ftIn(c.lineLen);
+    $('fRidge').textContent = frac16(S.ridge) + ' ÷ 2 × ' + fix(c.factor, 4) + ' = ' + frac16(c.ridgeDeduct);
+    $('fTail').textContent = frac16(S.overhang) + ' × ' + fix(c.factor, 4) + ' = ' + frac16(c.overRafter);
+    $('fCut').textContent = '(' + fix(S.run, 3).replace(/\.?0+$/, '') + '″ − ' + frac16(S.ridge / 2) + ' + ' + frac16(S.overhang) + ') × ' + fix(c.factor, 4) + ' = ' + fix(cut, 3) + '″ = ' + ftIn(cut);
+    $('fHap').textContent = frac16(S.depth) + ' ÷ cos ' + fix(c.thetaDeg, 1) + '° − ' + frac16(S.seat) + ' × tan ' + fix(c.thetaDeg, 1) + '° = ' + frac16(c.hap);
+    $('fRem').textContent = frac16(S.depth) + ' − ' + frac16(S.seat) + ' × sin ' + fix(c.thetaDeg, 1) + '° = ' + frac16(c.remaining);
+
+    const inner = buildEle(S, 6, L);
+    const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+    let minX = Math.min(...xs), maxX = Math.max(...xs), minY = Math.min(...ys), maxY = Math.max(...ys);
+    const pad = Math.max(maxX - minX, maxY - minY) * 0.09; minX -= pad; minY -= pad; maxX += pad; maxY += pad;
+    $('stage').innerHTML = '<svg viewBox="' + f1(minX) + ' ' + f1(minY) + ' ' + f1(maxX - minX) + ' ' + f1(maxY - minY) + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="' + L.aria(S) + '">' + inner + '</svg>';
+  }
+
+  function applyLang(l) {
+    lang = l;
+    document.documentElement.lang = l;
+    const L = T[l];
+    document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.dataset.i18n; if (typeof L[k] === 'string') el.textContent = L[k]; });
+    document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
+    try { localStorage.setItem('fc_rafter_lang', l); } catch (e) {}
+    render();
+  }
+
+  function chipGroup(id, attr, onPick) {
+    $(id).addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      document.querySelectorAll('#' + id + ' button').forEach(x => x.classList.toggle('on', x === b));
+      onPick(parseFloat(b.dataset[attr])); track(); render();
+    });
+  }
+  chipGroup('pitch', 'rise', v => { S.rise = v; $('riseIn').value = v; $('riseErr').textContent = ''; });
+  chipGroup('board', 'depth', v => { S.depth = v; });
+  chipGroup('seat', 'seat', v => { S.seat = v; });
+  chipGroup('ridge', 'ridge', v => { S.ridge = v; });
+  chipGroup('over', 'over', v => { S.overhang = v; $('overIn').value = v; $('overErr').textContent = ''; });
+
+  $('riseIn').addEventListener('input', () => {
+    const v = parseIn($('riseIn').value);
+    if (!(v >= 1 && v <= 24)) { $('riseErr').textContent = T[lang].errRise; return; }
+    $('riseErr').textContent = ''; S.rise = v; setOn('pitch', v, 'rise'); track(); render();
+  });
+  function runInput() {
+    const ft = parseIn($('runFt').value), inch = parseIn($('runIn').value);
+    const v = ft * 12 + inch;
+    if (!(ft >= 0 && inch >= 0 && v > 36 && v <= 1200)) { $('runErr').textContent = T[lang].errRun; return; }
+    $('runErr').textContent = ''; S.run = v; track(); render();
+  }
+  $('runFt').addEventListener('input', runInput);
+  $('runIn').addEventListener('input', runInput);
+  $('overIn').addEventListener('input', () => {
+    const v = parseIn($('overIn').value);
+    if (!(v >= 0 && v <= 36)) { $('overErr').textContent = T[lang].errOver; return; }
+    $('overErr').textContent = ''; S.overhang = v; setOn('over', v, 'over'); track(); render();
+  });
+
+  document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+  $('toEs').addEventListener('click', () => { applyLang('es'); $('calc').scrollIntoView({ behavior: 'smooth' }); });
+
+  let start = 'en';
+  try { const q = new URLSearchParams(location.search).get('lang'); const st = localStorage.getItem('fc_rafter_lang'); start = (q === 'es' || q === 'en') ? q : (st === 'es' ? 'es' : 'en'); } catch (e) {}
+  applyLang(start);
+})();
+</script>
+
+<!-- UTM handler (mirrors landing) -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  var captured = {};
+  var hasUtm = false;
+  utmKeys.forEach(function(key) {
+    var val = params.get(key);
+    if (val) { captured[key] = val; hasUtm = true; try { sessionStorage.setItem(key, val); } catch(e) {} }
+    else { try { var stored = sessionStorage.getItem(key); if (stored) captured[key] = stored; } catch(e) {} }
+  });
+  if (hasUtm && typeof gtag === 'function') {
+    var clean = new URLSearchParams(window.location.search);
+    utmKeys.forEach(function(key) { clean.delete(key); });
+    var newUrl = window.location.pathname + (clean.toString() ? '?' + clean.toString() : '') + window.location.hash;
+    gtag('event', 'utm_landing', { utm_source: captured.utm_source || '(none)', utm_medium: captured.utm_medium || '(none)', utm_campaign: captured.utm_campaign || '(none)', utm_content: captured.utm_content || '(none)', event_callback: function() { if (window.history && window.history.replaceState) { window.history.replaceState(null, '', newUrl); } }, event_timeout: 2000 });
+  }
+})();
+</script>
+
+</body>
+</html>
