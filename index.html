@@ -50,6 +50,9 @@
   .nav a.link{margin-left:auto;font-size:13px;color:var(--cream-dim)}
   .nav a.link+a.link{margin-left:16px}
   .nav a.cta{margin-left:16px;background:var(--orange);color:var(--orange-ink);font-weight:600;font-size:13px;padding:7px 14px;border-radius:8px}
+  /* En teléfono el gap del flex ya separa: sin el margen doble, el nav cabe a 360 y a 375. */
+  @media (max-width:879px){.nav .wrap{gap:10px}.nav a.link+a.link,.nav a.cta{margin-left:0}}
+  @media (max-width:380px){.nav a.cta{padding:7px 10px}}
   section{padding:44px 0}
   .sec-label{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--orange);text-transform:uppercase;margin-bottom:6px}
   .lead{color:var(--cream-dim);font-size:15px;margin-top:10px}
