@@ -1,7 +1,7 @@
 name: internal-leak-detector
 
 # Defense against accidentally committing internal-only content to this PUBLIC repo.
-# This repo serves the public web presence for Loom Framing App ONLY.
+# This repo serves the public web presence for FrameCore (antes Loom Framing) ONLY.
 # Internal development artifacts belong in the separate private repository.
 
 permissions:
@@ -92,7 +92,7 @@ jobs:
             echo "BLOCKED: this PR/commit contains content that belongs"
             echo "in the private development repository, not this public web repo."
             echo ""
-            echo "Public repo scope: Loom Framing landing + privacy policy + marketing."
+            echo "Public repo scope: FrameCore (antes Loom Framing) landing + privacy policy + marketing."
             echo "Internal artifacts (audits, dispatches, codenames, internal hooks)"
             echo "must stay in the separate private repository."
             echo "================================================================"

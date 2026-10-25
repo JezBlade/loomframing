@@ -1,12 +1,12 @@
-# 🌐 Loom Framing — Sitio Oficial
+# 🌐 FrameCore — Sitio Oficial
 
-Landing oficial de **Loom Framing** — la app del framero, pa' frameros.
+Landing oficial de **FrameCore** — la app del framero, pa' frameros.
 
 🔗 **En vivo:** [loomframing.com](https://loomframing.com)
 
 ## Qué es
 
-Sitio público de marketing de Loom Framing: español, mobile-first, hecho pa' los
+Sitio público de marketing de FrameCore: español, mobile-first, hecho pa' los
 frameros profesionales. Servido por GitHub Pages con dominio propio.
 
 ```
