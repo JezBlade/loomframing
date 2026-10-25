@@ -1,0 +1,111 @@
+# IndexNow: avisa a Bing (y a los buscadores que leen IndexNow) qué páginas
+# cambió el último despliegue, pa' que las vuelvan a leer sin esperar a que
+# pasen solos.
+#
+# - Corre DESPUÉS de que Pages publica (workflow_run del despliegue, y nomás si
+#   salió bien): si avisara al hacer push, el buscador leería lo de antes.
+# - Avisa nomás las .html que tocó el commit desplegado Y que siguen en el
+#   sitemap vivo: fuera los stubs noindex de redirección y lo borrado. Si no
+#   queda ninguna, no manda nada.
+# - La llave es PÚBLICA por diseño (IndexNow la lee del sitio pa' saber que el
+#   aviso es del dueño): vive en la raíz como <llave>.txt, no es secreto.
+# - Este repo es público: corre en ubuntu-latest, nunca en un runner propio, sin
+#   pull_request y con permisos de solo lectura.
+name: indexnow
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types: [completed]
+  # A mano: si dos cambios entran antes de que Pages termine, el aviso de la
+  # corrida nomás ve el último commit. Con «todo el sitemap» se re-avisa todo.
+  workflow_dispatch:
+    inputs:
+      todo_el_sitemap:
+        description: "Avisar TODAS las URLs del sitemap vivo (no nomás las del último commit)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+env:
+  SITE: https://loomframing.com
+  HOST: loomframing.com
+  INDEXNOW_KEY: 40b5f07fa741e64c8fcd60b4fa230c40
+
+jobs:
+  avisar:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout del commit desplegado
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
+
+      - name: Armar la lista de URLs
+        id: urls
+        env:
+          TODO: ${{ inputs.todo_el_sitemap }}
+        run: |
+          set -euo pipefail
+          # El sitemap VIVO, sin la copia del CDN (el ?v= cambia en cada corrida).
+          curl -fsS --retry 3 "$SITE/sitemap.xml?v=$GITHUB_RUN_ID" -o sitemap_vivo.xml
+          grep -o '<loc>[^<]*</loc>' sitemap_vivo.xml | sed -E 's#</?loc>##g' | sort -u > en_sitemap.txt
+          echo "En el sitemap vivo: $(wc -l < en_sitemap.txt) URLs"
+
+          if [ "${TODO:-false}" = "true" ]; then
+            cp en_sitemap.txt candidatas.txt
+          else
+            # Las .html que el commit agregó, cambió o renombró (lo borrado no).
+            git diff --name-only --diff-filter=AMR HEAD^ HEAD -- '*.html' > tocadas.txt || true
+            : > candidatas.txt
+            while IFS= read -r f; do
+              case "$f" in
+                index.html) echo "$SITE/" ;;
+                */index.html) echo "$SITE/${f%index.html}" ;;
+                *) echo "$SITE/$f" ;;
+              esac >> candidatas.txt
+            done < tocadas.txt
+          fi
+
+          # Nomás las que siguen en el sitemap vivo: así salen los stubs noindex.
+          sort -u candidatas.txt | comm -12 - en_sitemap.txt > urls.txt
+          echo "URLs pa' IndexNow ($(wc -l < urls.txt)):"
+          cat urls.txt
+          echo "n=$(wc -l < urls.txt)" >> "$GITHUB_OUTPUT"
+
+      - name: Avisar a IndexNow
+        if: steps.urls.outputs.n != '0'
+        run: |
+          set -euo pipefail
+          # La llave tiene que estar viva en el sitio, si no IndexNow rechaza.
+          VIVA=$(curl -fsS --retry 3 "$SITE/$INDEXNOW_KEY.txt?v=$GITHUB_RUN_ID")
+          [ "$VIVA" = "$INDEXNOW_KEY" ] || { echo "::error::La llave no está viva en $SITE/$INDEXNOW_KEY.txt"; exit 1; }
+
+          jq -n --arg host "$HOST" --arg key "$INDEXNOW_KEY" \
+            --arg loc "$SITE/$INDEXNOW_KEY.txt" --rawfile urls urls.txt \
+            '{host: $host, key: $key, keyLocation: $loc,
+              urlList: ($urls | split("\n") | map(select(length > 0)))}' > aviso.json
+
+          CODE=$(curl -sS -o respuesta.txt -w '%{http_code}' -X POST \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @aviso.json https://api.indexnow.org/indexnow)
+          echo "IndexNow respondió HTTP $CODE"
+          cat respuesta.txt || true
+          case "$CODE" in
+            200|202) echo "Aceptado." ;;
+            *) echo "::error::IndexNow no aceptó el aviso (HTTP $CODE)"; exit 1 ;;
+          esac
+
+      - name: Sin nada que avisar
+        if: steps.urls.outputs.n == '0'
+        run: |
+          echo "El commit no tocó ninguna página del sitemap vivo, así que no se manda nada."
