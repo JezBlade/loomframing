@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página no encontrada · FrameCore</title>
+<meta name="description" content="Esta página no existe. Sigue al blog del framero, a la calculadora de rafters o a la app FrameCore.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14110d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+<style>
+  /* Los mismos tokens que la portada. GitHub Pages sirve esta hoja en cualquier ruta
+     que no exista, por eso TODAS las rutas van absolutas (/...). */
+  :root{
+    --slate-900:#14110d; --slate-800:#1e1a15; --line:#3a332a;
+    --cream:#f4ecd7; --cream-dim:#c9c0ad; --muted:#8a8172;
+    --orange:#ff6d00; --orange-ink:#14110d;
+    --sans:'Inter',system-ui,sans-serif; --head:'Big Shoulders Display',sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--slate-900);color:var(--cream);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:440px;margin:0 auto;padding:0 20px;width:100%}
+  h1{font-family:var(--head);font-weight:800;letter-spacing:0.5px;line-height:0.95;text-transform:uppercase;font-size:44px;margin-top:10px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--orange);text-transform:uppercase}
+  .lead{color:var(--cream-dim);font-size:15px;margin-top:14px}
+  .btn{display:block;width:100%;text-align:center;padding:16px;border-radius:12px;font-family:var(--head);font-weight:700;font-size:18px;letter-spacing:0.5px;text-transform:uppercase}
+  .btn-primary{background:var(--orange);color:var(--orange-ink)}
+  .btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line)}
+  header.nav{position:sticky;top:0;z-index:20;background:rgba(20,17,13,0.94);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+  .nav .wrap{display:flex;align-items:center;gap:10px;height:56px}
+  .brand{font-family:var(--head);font-weight:800;font-size:18px;letter-spacing:1px}
+  .nav a.link{margin-left:auto;font-size:13px;color:var(--cream-dim)}
+  .nav a.cta{background:var(--orange);color:var(--orange-ink);font-weight:600;font-size:13px;padding:7px 14px;border-radius:8px}
+  @media (max-width:380px){.nav a.cta{padding:7px 10px}}
+  main{flex:1;padding:48px 0 44px}
+  .card{background:var(--slate-800);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:22px}
+  .sugiere ul{list-style:none;margin-top:8px}
+  .sugiere li+li{margin-top:8px}
+  .sugiere a{color:var(--orange);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .btns{display:grid;gap:12px;margin-top:26px}
+  .foot{padding:36px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+  .foot a{color:var(--cream-dim)}
+  .social{display:flex;flex-wrap:wrap;gap:16px;margin:14px 0}
+  @media (min-width:880px){
+    .wrap{max-width:760px;padding:0 32px}
+    .nav .wrap{height:64px;gap:14px}
+    .brand{font-size:20px}
+    .nav a.link{font-size:14px}
+    .nav a.cta{margin-left:16px}
+    main{padding:72px 0 60px}
+    h1{font-size:60px}
+    .btn{max-width:380px}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">FRAMECORE</a>
+    <a class="link" href="/blog/">Blog</a>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.loomframing.app&amp;referrer=utm_source%3Dloomframing.com%26utm_medium%3Dweb%26utm_campaign%3D404%26utm_content%3Dnav">Descargar</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+  <p class="eyebrow">Error 404 · página no encontrada</p>
+  <h1>Esta liga no lleva a ningún lado</h1>
+  <p class="lead">Puede que la liga se haya cortado al copiarla, o que la página ya no exista. No pasa nada: aquí tienes por dónde seguir.</p>
+
+  <div class="card sugiere" id="sugiere" hidden>
+    <p class="eyebrow">¿Buscabas esta?</p>
+    <ul id="sugiere-lista"></ul>
+  </div>
+
+  <div class="btns">
+    <a class="btn btn-primary" href="/blog/">Ir al blog del framero</a>
+    <a class="btn btn-ghost" href="/rafter-calculator.html">Calculadora de rafters, gratis</a>
+    <a class="btn btn-ghost" href="/">Conoce FrameCore</a>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="brand">FRAMECORE</span>
+    <p style="margin-top:6px">Te explica lo que no entiendes.</p>
+    <div class="social">
+      <a href="https://www.youtube.com/@FrameCoreApp">YouTube</a>
+      <a href="https://www.tiktok.com/@framecoreapp">TikTok</a>
+      <a href="https://www.instagram.com/framecoreapp/">Instagram</a>
+      <a href="https://www.linkedin.com/company/117094824">LinkedIn</a>
+    </div>
+    <p style="margin-top:10px">IRC 2018 · Android · Google Play · © 2026 FrameCore</p>
+  </div>
+</footer>
+
+<!-- Si la liga llegó cortada (pasa al copiarla de una red social), busca en el sitemap
+     la página que empieza igual y la ofrece. Nomás lee, no redirige: el 404 se queda 404. -->
+<script>
+(function () {
+  var crudo = location.pathname;
+  try { crudo = decodeURIComponent(crudo); } catch (e) {}
+  var ruta = crudo.toLowerCase().replace(/[)\]\.,;:!?'"…\s]+$/, '');
+  if (ruta.length < 8 || !window.fetch || !window.DOMParser) return;
+
+  function bonito(path) {
+    var s = path.replace(/\/$/, '').split('/').pop().replace(/\.html$/, '').replace(/-/g, ' ');
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  fetch('/sitemap.xml').then(function (r) { return r.ok ? r.text() : ''; }).then(function (xml) {
+    var locs = (xml.match(/<loc>[^<]+<\/loc>/g) || []).map(function (s) { return s.replace(/<\/?loc>/g, ''); });
+    var hallados = locs.filter(function (u) {
+      var path = u.replace(/^https?:\/\/[^\/]+/, '').toLowerCase();
+      var sinExt = path.replace(/\.html$/, '');
+      if (path === '/' || path === '/blog/') return false;
+      return path.indexOf(ruta) === 0 || (sinExt.length > 8 && ruta.indexOf(sinExt) === 0);
+    }).slice(0, 3);
+    if (!hallados.length) return;
+
+    var lista = document.getElementById('sugiere-lista');
+    hallados.forEach(function (u) {
+      var path = u.replace(/^https?:\/\/[^\/]+/, '');
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = path;
+      a.textContent = bonito(path);
+      li.appendChild(a);
+      lista.appendChild(li);
+      fetch(path).then(function (r) { return r.ok ? r.text() : ''; }).then(function (html) {
+        var t = new DOMParser().parseFromString(html, 'text/html').title;
+        if (t) a.textContent = t.replace(/\s*\|\s*FrameCore\s*$/i, '').replace(/\s*·\s*el código en tu idioma, con el por qué\s*$/i, '');
+      }).catch(function () {});
+    });
+    document.getElementById('sugiere').hidden = false;
+  }).catch(function () {});
+})();
+</script>
+
+<!-- GA4 (el mismo bloque de la portada: nomás corre en loomframing.com) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EBQ9B5CTEK"></script>
+<script>
+  if(location.hostname.indexOf('loomframing.com')>-1){
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    (function(){try{var k='lf_interno',q=new URLSearchParams(location.search).get(k);if(q==='1'){localStorage.setItem(k,'1');}else if(q==='0'){localStorage.removeItem(k);}if(localStorage.getItem(k)==='1'){gtag('set',{traffic_type:'internal'});}}catch(e){}})();
+    gtag('config','G-EBQ9B5CTEK');
+  }
+</script>
+</body>
+</html>
