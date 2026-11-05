@@ -21,7 +21,7 @@
     <link rel="icon" type="image/png" href="../assets/app-icon-512.png">
 
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"CollectionPage","name":"Blog del Framero","inLanguage":"es","url":"https://loomframing.com/blog/","description":"Tips de framing, calculadoras y conocimiento de obra para frameros profesionales.","publisher":{"@type":"Organization","name":"FrameCore","alternateName":"Loom Framing"},"isPartOf":{"@type":"WebSite","name":"Loom Framing","url":"https://loomframing.com/"},"dateModified":"2026-09-12"}
+    {"@context":"https://schema.org","@type":"CollectionPage","name":"Blog del Framero","inLanguage":"es","url":"https://loomframing.com/blog/","description":"Tips de framing, calculadoras y conocimiento de obra para frameros profesionales.","publisher":{"@type":"Organization","name":"FrameCore","alternateName":"Loom Framing"},"isPartOf":{"@type":"WebSite","name":"FrameCore","alternateName":"Loom Framing","url":"https://loomframing.com/"},"dateModified":"2026-09-12"}
     </script>
 
     <!-- GA4 -->
@@ -409,5 +409,18 @@
 })();
 </script>
 
+<!-- El clic a Play se avisa en todas las páginas (5-nov-2026), con un solo aviso pa' todos los links. Si el link trae data-play-slug, ése va como article_slug, igual que en la prueba de la tarjeta del 8-oct. -->
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href*="play.google.com/store/apps/details"]') : null;
+  if (!a || typeof gtag !== 'function') return;
+  var ref = new URLSearchParams('');
+  try { ref = new URLSearchParams(new URL(a.href).searchParams.get('referrer') || ''); } catch (err) {}
+  var datos = { link_placement: ref.get('utm_content') || '(sin referrer)', link_campaign: ref.get('utm_campaign') || '(sin referrer)', transport_type: 'beacon' };
+  var slug = a.getAttribute('data-play-slug');
+  if (slug) { datos.article_slug = slug; }
+  gtag('event', 'click_play_store', datos);
+});
+</script>
 </body>
 </html>
