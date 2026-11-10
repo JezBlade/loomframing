@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.loomframing.app",
+      "sha256_cert_fingerprints": [
+        "98:FB:26:3E:FA:08:75:81:3C:EB:72:F5:F8:3D:12:39:AB:EF:F1:E6:8B:17:F0:48:88:5F:8C:8B:1B:A2:D1:C0",
+        "D0:09:4E:2D:74:DD:C0:71:62:8E:F4:74:32:CB:D1:CF:1B:DC:3A:86:0E:DD:81:14:29:E6:8B:4F:BB:F2:38:35"
+      ]
+    }
+  }
+]
