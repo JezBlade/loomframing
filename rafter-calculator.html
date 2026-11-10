@@ -322,7 +322,7 @@
   'use strict';
   const TYPES = { common: { label:'Common', unit:12 } };
   const BOARD_SIZES = [
-    { depth:3.5, label:'2×4' }, { depth:5.5, label:'2×6' },
+    { depth:5.5, label:'2×6' },
     { depth:7.25, label:'2×8' }, { depth:9.25, label:'2×10' },
     { depth:11.25, label:'2×12' }
   ];
@@ -496,7 +496,7 @@
       fixOv:'Cut the overhang back to 24″ or support it (lookout).',
       fixD4:'Shorten the seat cut to D/4 or use a deeper rafter.',
       fixFl:'Go up a board size or shorten the seat cut: the end notch is more than ¼ of the depth.',
-      adviceB:(a)=>a.kind==='shorten-or-upsize'?'Shorten the seat to '+adviceInches(a.seat)+', keeping at least 1 1/2" of bearing (R802.6), or go up to '+a.board.label+'.':a.kind==='shorten'?'Shorten the seat to '+adviceInches(a.seat)+', keeping at least 1 1/2" of bearing (R802.6).':a.kind==='upsize'?'Go up to '+a.board.label+(a.fullPass?'.':', with the seat at '+adviceInches(a.seat)+'.'):'At this pitch, D/4 leaves no 1 1/2" seat in any size: bearing is up to the designer.',
+      adviceB:(a)=>a.kind==='shorten-or-upsize'?'Shorten the seat to '+adviceInches(a.seat)+', keeping at least 1 1/2" of bearing (R802.6), or go up to '+a.board.label+'.':a.kind==='shorten'?'Shorten the seat to '+adviceInches(a.seat)+', keeping at least 1 1/2" of bearing (R802.6).':a.kind==='upsize'?'Go up to '+a.board.label+(a.fullPass?'.':', with the seat at '+adviceInches(a.seat)+'.'):'At this pitch, D/4 leaves no 1 1/2" seat in any size: the bearing is up to the designer.',
       adviceF:(c,S)=>'The seat cut takes '+adviceInches(c.endNotch)+'; the code allows up to D/4 = '+adviceInches(S.depth/D4_DIVISOR)+' (R802.7.1)',
       errRise:'Use a rise from 1 to 24.', errRun:'Run has to be more than 3 ft.', errOver:'Use 0 to 36 inches.',
       aria:(S)=>'Rafter '+S.rise+'/12 with birdsmouth'
